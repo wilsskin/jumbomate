@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <style type="text/css">
+                        .grid-container{
+                                width: 85%;
+                                height: 90%;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                                margin-left: auto;
+                                margin-right: auto;
+                        }
+                        .person{
+                                display: flex;
+                                flex-direction: column;
+                                border: 1px solid #000;
+                                padding: 10px;
+                                width: 225px;
+                        }
+                        .person h3{
+                                text-align: center;
+                        }
+                        .person img {
+                                width: 100px;
+                                height: auto;
+                                border-radius: 5px;
+                                margin-bottom: 10px;
+                                margin-left: auto;
+                                margin-right: auto;
+                        }
+                </style>
+        </head>
+        <body>
+                <h1> Our on campus student directory</h1>
+                <div class="grid-container">
+                        <script>
+                                const people = [
+                                        { name: "Alice", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                                ];
+                                people.forEach(person => {
+                                        document.write("<div class='person'>");
+                                        document.write("<img src='" + person.img + "' alt='Photo of " + person.name + "'>");
+                                        document.write("<h3>" + person.name + "</h3>");
+                                        document.write("Hometown: " + person.hometown + "<br>");
+                                        document.write("Campus: " + (person.onCampus ? "On Campus" : "Off Campus") + "<br>");
+                                        document.write("Major: " + person.major + "<br>");
+                                        document.write("Gender: " + person.gender + "<br>");
+                                        document.write("Cleanliness: " + person.cleanliness + "/10<br>");
+                                        document.write("Wakeup: " + person.wakeup +"<br>");
+                                        document.write("Bedtime: " + person.bedtime + "<br>");
+                                        document.write("Smoker: " + (person.smoker ? "Yes" : "No"));
+                                        document.write("</div>");
+                                })
+                        </script>
+                </div>
+        </body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz for Directory Entry</title>
+        <style type="text/css">
+                .form-container {
+                        width: 75%;
+                        margin: auto;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 20px;
+                }
+                .form-row {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        gap: 20px;
+                        width: 100%;
+                        margin-bottom: 10px;
+                }
+                .form-group {
+                        flex: 1 1 200px; /* Minimum width of 200px */
+                }
+                .error {
+                        color: red;
+                        font-size: 0.9em;
+                }
+                .result-container{
+                        width: 85%;
+                        height: 90%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        margin-left: auto;
+                        margin-right: auto;
+                }
+                .person{
+                        display: flex;
+                        flex-direction: column;
+                        border: 1px solid #000;
+                        padding: 10px;
+                        width: 225px;
+                }
+                .person h3{
+                        text-align: center;
+                }
+                .person img {
+                        width: 100px;
+                        height: auto;
+                        border-radius: 5px;
+                        margin-bottom: 10px;
+                        margin-left: auto;
+                        margin-right: auto;
+                }
+        </style>
+    </head>
+    <body>
+        <h1>Create Your Directory Entry</h1>
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" id="name" required>
+                    <div id="name-error" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label>Hometown:</label>
+                    <input type="text" id="hometown" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Major:</label>
+                    <input type="text" id="major" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <select id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Cleanliness (1-10):</label>
+                    <input type="number" id="cleanliness" min="1" max="10" required>
+                    <div id="cleanliness-error" class="error"></div>
+                </div>
+                <div class="form-group">
+                        <label>Living Location:</label>
+                        <select id="onCampus" required>
+                            <option value="" disabled selected>Select your location</option>
+                            <option value="true">On Campus</option>
+                            <option value="false">Off Campus</option>
+                        </select>
+                    <div id="onCampus-error" class="error"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Wakeup Time:</label>
+                    <input type="time" id="wakeup" required>
+                </div>
+                <div class="form-group">
+                    <label>Bedtime:</label>
+                    <input type="time" id="bedtime" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Smoker:</label>
+                    <select id="smoker">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="validateAndGenerateResult()">Submit</button>
+        </div>
+        
+        <div class="result-container" id="results"></div>
+
+        <script>
+                const onCampusPeople = [
+                        { name: "Alice", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"05:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"06:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"07:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"08:00", bedtime:"23:00", smoker: true },
+                ];
+
+                const offCampusPeople = [
+                        { name: "Ella", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                ];
+
+                function timeDiff(t1, t2) {
+                        h1 = Number(t1.split(":")[0]);
+                        m1 =  Number(t1.split(":")[1]);
+                        h2 =  Number(t2.split(":")[0]);
+                        m2 =  Number(t2.split(":")[1]);
+                        minuteDiff = Math.abs(h1 * 60 + m1 - (h2 *60 + m2));
+                        if (minuteDiff > 720) 
+                                minuteDiff = 1440 - minuteDiff;
+                        return minuteDiff / 60;
+                }
+
+                function calculateCompatibility(user, person) {
+                        let score = 100;
+                        wakeupDiff = timeDiff(user.wakeup, person.wakeup);
+                        bedtimeDiff = timeDiff(user.bedtime, person.bedtime);
+                        cleanDiff = Math.abs(user.cleanliness - person.cleanliness);
+                        if (wakeupDiff > 1) 
+                                score -= 5 * wakeupDiff;
+
+                        if (bedtimeDiff > 1)
+                                score -= 5 * bedtimeDiff;
+
+                        score -= 3 * cleanDiff;
+
+                        if (user.smoker != person.smoker)
+                                score -= 20;
+
+                        return score;
+                }
+            
+                function validateAndGenerateResult() {
+                        let valid = true;
+                        document.getElementById("name-error").innerText = "";
+                        document.getElementById("cleanliness-error").innerText = "";
+                        document.getElementById("onCampus-error").innerText = "";
+
+                        const name = document.getElementById("name").value.trim();
+                        if (name === "") {
+                                document.getElementById("name-error").innerText = "Name is required.";
+                                valid = false;
+                        }
+
+                        const cleanlinessScore = parseInt(document.getElementById("cleanliness").value, 10);
+                        if (isNaN(cleanlinessScore) || cleanlinessScore < 1 || cleanlinessScore > 10) {
+                                document.getElementById("cleanliness-error").innerText = "Cleanliness must be between 1 and 10.";
+                                valid = false;
+                        }
+
+                        const onCampusSelection = document.getElementById("onCampus").value;
+                        if (!onCampusSelection) {
+                                document.getElementById("onCampus-error").innerText = "Please select where you want to live.";
+                                valid = false;
+                        }
+
+                        if (!valid) return;
+
+                        const user = {wakeup : document.getElementById("wakeup").value, 
+                                    bedtime : document.getElementById("bedtime").value, 
+                                    smoker : document.getElementById("smoker").value === "true",
+                                    cleanliness :cleanlinessScore};
+                        
+                                    
+                        onCampus = onCampusSelection === "true";
+                        const peopleList = onCampus ? onCampusPeople : offCampusPeople;
+
+                        const compatibilityArray = peopleList.map(person => ({
+                                person,
+                                compatibilityScore: calculateCompatibility(user, person)
+                        }));
+                        compatibilityArray.sort((a, b) => b.compatibilityScore - a.compatibilityScore);
+                        
+                        let newHTML = "";
+
+                        compatibilityArray.forEach(person => {
+                                newHTML += ` <div class="person">
+                                                        <img src="${person.person.img}" alt="Photo of ${person.person.name}">
+                                                        <h3>${person.person.name} (Score: ${person.compatibilityScore.toFixed(2)})</h3>
+                                                        Hometown: ${person.person.hometown}<br>
+                                                        Major: ${person.person.major}<br>
+                                                        Gender: ${person.person.gender}<br>
+                                                        Cleanliness: ${person.person.cleanliness}/10<br>
+                                                        Wakeup: ${person.person.wakeup}<br>
+                                                        Bedtime: ${person.person.bedtime}<br>
+                                                        Smoker: ${person.person.smoker ? "Yes" : "No"}
+                                                </div> `;
+                        });
+                        document.getElementById("results").innerHTML = newHTML
+                }
+        </script>
+    </body>
+</html>
