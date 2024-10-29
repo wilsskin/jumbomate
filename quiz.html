@@ -1,150 +1,147 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Quiz for Directory Entry</title>
+        <link rel= "stylesheet" href="style.css">
         <style type="text/css">
-                .form-container {
-                        width: 75%;
-                        margin: auto;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        padding: 20px;
-                }
-                .form-row {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        gap: 20px;
-                        width: 100%;
-                        margin-bottom: 10px;
-                }
-                .form-group {
-                        flex: 1 1 200px; /* Minimum width of 200px */
-                }
-                .error {
-                        color: red;
-                        font-size: 0.9em;
-                }
-                .result-container{
-                        width: 85%;
-                        height: 90%;
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                        margin-left: auto;
-                        margin-right: auto;
-                }
-                .person{
-                        display: flex;
-                        flex-direction: column;
-                        border: 1px solid #000;
-                        padding: 10px;
-                        width: 225px;
-                }
-                .person h3{
+                h1{
                         text-align: center;
-                }
-                .person img {
-                        width: 100px;
-                        height: auto;
-                        border-radius: 5px;
-                        margin-bottom: 10px;
-                        margin-left: auto;
-                        margin-right: auto;
                 }
         </style>
     </head>
     <body>
-        <h1>Create Your Directory Entry</h1>
-        <div class="form-container">
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Name:</label>
-                    <input type="text" id="name" required>
-                    <div id="name-error" class="error"></div>
+        <nav>
+                <div class="logo">
+                    <a href="index.html"><img src="Logo.png" alt="Logo"></a>
                 </div>
-                <div class="form-group">
-                    <label>Hometown:</label>
-                    <input type="text" id="hometown" required>
-                </div>
-            </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="#" class="dropdown">About</a>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="testimony.html">Testimonials</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown">Database</a>
+                        <ul>
+                            <li><a href="directory1.html">On-Campus</a></li>
+                            <li><a href="directory2.html">Off-Campus</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+        </nav>
+        <div class="main-content">
+                <h1>Take our Housing Survey</h1>
+                <div class="form-container">
+                        <div class="form-row">
+                                <div class="form-group">
+                                <label>Name:</label>
+                                <input type="text" id="name" required>
+                                <div id="name-error" class="error"></div>
+                                </div>
+                                <div class="form-group">
+                                <label>Hometown:</label>
+                                <input type="text" id="hometown" required>
+                                </div>
+                        </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Major:</label>
-                    <input type="text" id="major" required>
-                </div>
-                <div class="form-group">
-                    <label>Gender:</label>
-                    <select id="gender">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-            </div>
+                        <div class="form-row">
+                                <div class="form-group">
+                                <label>Major:</label>
+                                <input type="text" id="major" required>
+                                </div>
+                                <div class="form-group">
+                                <label>Gender:</label>
+                                <select id="gender">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                </select>
+                                </div>
+                        </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Cleanliness (1-10):</label>
-                    <input type="number" id="cleanliness" min="1" max="10" required>
-                    <div id="cleanliness-error" class="error"></div>
-                </div>
-                <div class="form-group">
-                        <label>Living Location:</label>
-                        <select id="onCampus" required>
-                            <option value="" disabled selected>Select your location</option>
-                            <option value="true">On Campus</option>
-                            <option value="false">Off Campus</option>
-                        </select>
-                    <div id="onCampus-error" class="error"></div>
-                </div>
-            </div>
+                        <div class="form-row">
+                                <div class="form-group">
+                                <label>Cleanliness (1-10):</label>
+                                <input type="number" id="cleanliness" min="1" max="10" required>
+                                <div id="cleanliness-error" class="error"></div>
+                                </div>
+                                <div class="form-group">
+                                        <label>Living Location:</label>
+                                        <select id="onCampus" required>
+                                        <option value="" disabled selected>Select your location</option>
+                                        <option value="true">On Campus</option>
+                                        <option value="false">Off Campus</option>
+                                        </select>
+                                <div id="onCampus-error" class="error"></div>
+                                </div>
+                        </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Wakeup Time:</label>
-                    <input type="time" id="wakeup" required>
-                </div>
-                <div class="form-group">
-                    <label>Bedtime:</label>
-                    <input type="time" id="bedtime" required>
-                </div>
-            </div>
+                        <div class="form-row">
+                                <div class="form-group">
+                                <label>Wakeup Time:</label>
+                                <input type="time" id="wakeup" required>
+                                </div>
+                                <div class="form-group">
+                                <label>Bedtime:</label>
+                                <input type="time" id="bedtime" required>
+                                </div>
+                        </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Smoker:</label>
-                    <select id="smoker">
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
+                        <div class="form-row">
+                                <div class="form-group">
+                                <label>Smoker:</label>
+                                <select id="smoker">
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                </select>
+                                </div>
+                        </div>
+                        <button class="cta-button" onclick="validateAndGenerateResult()">Submit</button>
+                        
+                
                 </div>
-            </div>
-
-            <button onclick="validateAndGenerateResult()">Submit</button>
+                
+                <div class="result-container" id="results"></div>
         </div>
-        
-        <div class="result-container" id="results"></div>
 
         <script>
                 const onCampusPeople = [
-                        { name: "Alice", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"05:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"06:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"07:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"08:00", bedtime:"23:00", smoker: true },
+                    { name: "Alice", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                    { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                    { name: "Carol", hometown: "Riverton", major: "Mathematics", gender: "Female", cleanliness: 9, img: "smileyface.png", wakeup: "07:30", bedtime: "22:30", smoker: false },
+                    { name: "Dave", hometown: "Lakeside", major: "Biology", gender: "Male", cleanliness: 5, img: "smileyface.png", wakeup: "08:00", bedtime: "00:00", smoker: false },
+                    { name: "Eve", hometown: "Meadowbrook", major: "English", gender: "Female", cleanliness: 7, img: "smileyface.png", wakeup: "06:45", bedtime: "23:15", smoker: false },
+                    { name: "Ginny", hometown: "Lakeview", major: "Mathematics", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup: "08:30", bedtime: "23:00", smoker: false },
+                    { name: "Nick", hometown: "Brakerston", major: "Biology", gender: "Male", cleanliness: 6.5, img: "smileyface.png", wakeup: "10:00", bedtime: "00:00", smoker: false },
+                    { name: "Mia", hometown: "Springfield", major: "Economics", gender: "Female", cleanliness: 6, img: "smileyface.png", wakeup: "08:00", bedtime: "23:00", smoker: false },
+                    { name: "Noah", hometown: "Hometownville", major: "Computer Science", gender: "Male", cleanliness: 8, img: "smileyface.png", wakeup: "09:00", bedtime: "00:00", smoker: true },
+                    { name: "Olivia", hometown: "Greenfield", major: "Physics", gender: "Female", cleanliness: 7, img: "smileyface.png", wakeup: "08:00", bedtime: "23:30", smoker: false },
+                    { name: "Paul", hometown: "Lakeside", major: "History", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup: "07:00", bedtime: "23:00", smoker: true },
+                    { name: "Quinn", hometown: "Riverton", major: "Psychology", gender: "Non-binary", cleanliness: 9, img: "smileyface.png", wakeup: "06:30", bedtime: "22:00", smoker: false },
+                    { name: "Jack", hometown: "Bergenfield", major: "Business", gender: "Male", cleanliness: 8, img: "smileyface.png", wakeup: "8:30", bedtime: "23:00", smoker: false },
+                    { name: "Lila", hometown: "Lexington", major: "Biology", gender: "Female", cleanliness: 7, img: "smileyface.png", wakeup: "10:00", bedtime: "23:30", smoker: true }
                 ];
 
                 const offCampusPeople = [
-                        { name: "Ella", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                        { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                    { name: "Ella", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                    { name: "Grace", hometown: "Oakville", major: "Psychology", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup: "08:30", bedtime: "22:00", smoker: false },
+                    { name: "Henry", hometown: "Brookside", major: "Philosophy", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup: "09:30", bedtime: "23:30", smoker: true },
+                    { name: "Isabel", hometown: "Sunnydale", major: "Psychology", gender: "Female", cleanliness: 10, img: "smileyface.png", wakeup: "07:00", bedtime: "21:30", smoker: false },
+                    { name: "Jack", hometown: "Hilltop", major: "Engineering", gender: "Male", cleanliness: 3, img: "smileyface.png", wakeup: "06:00", bedtime: "23:45", smoker: false },
+                    { name: "Karen", hometown: "Riverside", major: "Political Science", gender: "Female", cleanliness: 7, img: "smileyface.png", wakeup: "07:15", bedtime: "22:45", smoker: false },
+                    { name: "Leo", hometown: "Pinecrest", major: "Business", gender: "Male", cleanliness: 5, img: "smileyface.png", wakeup: "08:00", bedtime: "23:00", smoker: true },
+                    { name: "Riley", hometown: "Sunnydale", major: "Engineering", gender: "Female", cleanliness: 4, img: "smileyface.png", wakeup: "09:00", bedtime: "01:00", smoker: true },
+                    { name: "Sophia", hometown: "Meadowbrook", major: "Art", gender: "Female", cleanliness: 10, img: "smileyface.png", wakeup: "07:00", bedtime: "22:00", smoker: false },
+                    { name: "Tom", hometown: "Brookside", major: "Business", gender: "Male", cleanliness: 5, img: "smileyface.png", wakeup: "10:00", bedtime: "23:45", smoker: false },
+                    { name: "Uma", hometown: "Oakville", major: "Biology", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup: "08:30", bedtime: "23:00", smoker: false },
+                    { name: "Victor", hometown: "Pinecrest", major: "Chemistry", gender: "Male", cleanliness: 7, img: "smileyface.png", wakeup: "09:00", bedtime: "00:30", smoker: true },
+                    { name: "Wendy", hometown: "Hilltop", major: "Environmental Science", gender: "Female", cleanliness: 9, img: "smileyface.png", wakeup: "07:45", bedtime: "22:30", smoker: false }
                 ];
 
                 function timeDiff(t1, t2) {

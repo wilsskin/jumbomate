@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html>
         <head>
+                <meta charset="UTF-8">
+                <link rel= "stylesheet" href="style.css">
                 <style type="text/css">
-                        .grid-container{
-                                width: 85%;
-                                height: 90%;
-                                display: flex;
-                                flex-wrap: wrap;
-                                justify-content: center;
-                                margin-left: auto;
-                                margin-right: auto;
-                        }
-                        .person{
-                                display: flex;
-                                flex-direction: column;
-                                border: 1px solid #000;
-                                padding: 10px;
-                                width: 225px;
-                        }
-                        .person h3{
+                        h1{
                                 text-align: center;
-                        }
-                        .person img {
-                                width: 100px;
-                                height: auto;
-                                border-radius: 5px;
-                                margin-bottom: 10px;
-                                margin-left: auto;
-                                margin-right: auto;
                         }
                 </style>
         </head>
         <body>
+                <nav>
+                        <div class="logo">
+                            <a href="index.html"><img src="Logo.png" alt="Logo"></a>
+                        </div>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>
+                                <a href="#" class="dropdown">About</a>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="testimony.html">Testimonials</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown">Database</a>
+                                <ul>
+                                    <li><a href="directory1.html">On-Campus</a></li>
+                                    <li><a href="directory2.html">Off-Campus</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="quiz.html">Quiz</a></li>
+                        </ul>
+                </nav>
+                <div class="main-content">
                 <h1> Our off campus student directory</h1>
-                <div class="grid-container">
+                <div class="result-container">
                         <script>
                                 const people = [
+                                        { name: "Ella", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
                                         { name: "Grace", hometown: "Oakville", major: "Psychology", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup: "08:30", bedtime: "22:00", smoker: false },
                                         { name: "Henry", hometown: "Brookside", major: "Philosophy", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup: "09:30", bedtime: "23:30", smoker: true },
                                         { name: "Isabel", hometown: "Sunnydale", major: "Psychology", gender: "Female", cleanliness: 10, img: "smileyface.png", wakeup: "07:00", bedtime: "21:30", smoker: false },
@@ -46,8 +50,8 @@
                                         { name: "Sophia", hometown: "Meadowbrook", major: "Art", gender: "Female", cleanliness: 10, img: "smileyface.png", wakeup: "07:00", bedtime: "22:00", smoker: false },
                                         { name: "Tom", hometown: "Brookside", major: "Business", gender: "Male", cleanliness: 5, img: "smileyface.png", wakeup: "10:00", bedtime: "23:45", smoker: false },
                                         { name: "Uma", hometown: "Oakville", major: "Biology", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup: "08:30", bedtime: "23:00", smoker: false },
-                                        { name: "Victor", hometown: "Pinecrest", major: "Chemistry", gender: "Male", cleanliness: 7, img: "smileyface.png", wakeup: "09:00", bedtime: "00:30", smoker: true },
-                                        { name: "Wendy", hometown: "Hilltop", major: "Environmental Science", gender: "Female", cleanliness: 9, img: "smileyface.png", wakeup: "07:45", bedtime: "22:30", smoker: false }
+                                        { name: "Wilson", hometown: "Pinecrest", major: "Chemistry", gender: "Male", cleanliness: 7, img: "smileyface.png", wakeup: "09:00", bedtime: "00:30", smoker: true },
+                                        { name: "Ariella", hometown: "Hilltop", major: "Environmental Science", gender: "Female", cleanliness: 9, img: "smileyface.png", wakeup: "07:45", bedtime: "22:30", smoker: false }
                                 ];
                                 people.forEach(person => {
                                         document.write("<div class='person'>");
@@ -65,5 +69,6 @@
                                 })
                         </script>
                 </div>
+        </div>
         </body>
 </html>
