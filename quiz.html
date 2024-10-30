@@ -8,6 +8,84 @@
                 h1{
                         text-align: center;
                 }
+/* General Form Styles */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px; /* Reduced padding to limit extra space around the form */
+    padding-left: 125px;
+    padding-right: 125px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-section-label {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px; /* Reduced top margin */
+    margin-bottom: 40px; /* Reduced spacing under the section title */
+    color: #333;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px; /* Uniform spacing between questions */
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 8px; /* Consistent spacing above inputs */
+    color: #666;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="time"],
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    outline: none;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+    margin: 0;
+}
+
+.cta-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #6496fa;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+}
+
+/* Error Styling */
+.error {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: left;
+    display: none;
+}
+
+
         </style>
     </head>
     <body>
@@ -36,79 +114,84 @@
                 </ul>
         </nav>
         <div class="main-content">
-                <h1>Take our Housing Survey</h1>
+                <h1>Take Our Housing Survey</h1>
                 <div class="form-container">
+                        <div class="form-section-label">General Information</div>
+                    
                         <div class="form-row">
-                                <div class="form-group">
-                                <label>Name:</label>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
                                 <input type="text" id="name" required>
                                 <div id="name-error" class="error"></div>
-                                </div>
-                                <div class="form-group">
-                                <label>Hometown:</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="hometown">Hometown:</label>
                                 <input type="text" id="hometown" required>
-                                </div>
+                            </div>
                         </div>
-
+                    
                         <div class="form-row">
-                                <div class="form-group">
-                                <label>Major:</label>
+                            <div class="form-group">
+                                <label for="major">Major:</label>
                                 <input type="text" id="major" required>
-                                </div>
-                                <div class="form-group">
-                                <label>Gender:</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender:</label>
                                 <select id="gender">
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                        <option value="Other">Other</option>
+                                    <option value="" disabled selected>Select your gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
                                 </select>
-                                </div>
+                            </div>
                         </div>
-
+                    
+                        <div class="form-group">
+                            <label for="onCampus">Living Location:</label>
+                            <select id="onCampus" required>
+                                <option value="" disabled selected>Select your location</option>
+                                <option value="true">On Campus</option>
+                                <option value="false">Off Campus</option>
+                            </select>
+                            <div id="onCampus-error" class="error"></div>
+                        </div>
+                    
+                        <div class="form-section-label">Personal Preferences</div>
+                    
                         <div class="form-row">
-                                <div class="form-group">
-                                <label>Cleanliness (1-10):</label>
+                            <div class="form-group">
+                                <label for="cleanliness">Cleanliness (1-10):</label>
                                 <input type="number" id="cleanliness" min="1" max="10" required>
                                 <div id="cleanliness-error" class="error"></div>
-                                </div>
-                                <div class="form-group">
-                                        <label>Living Location:</label>
-                                        <select id="onCampus" required>
-                                        <option value="" disabled selected>Select your location</option>
-                                        <option value="true">On Campus</option>
-                                        <option value="false">Off Campus</option>
-                                        </select>
-                                <div id="onCampus-error" class="error"></div>
-                                </div>
+                            </div>
                         </div>
-
+                    
                         <div class="form-row">
-                                <div class="form-group">
-                                <label>Wakeup Time:</label>
+                            <div class="form-group">
+                                <label for="wakeup">Wakeup Time:</label>
                                 <input type="time" id="wakeup" required>
-                                </div>
-                                <div class="form-group">
-                                <label>Bedtime:</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="bedtime">Bedtime:</label>
                                 <input type="time" id="bedtime" required>
-                                </div>
+                            </div>
                         </div>
-
+                    
                         <div class="form-row">
-                                <div class="form-group">
-                                <label>Smoker:</label>
+                            <div class="form-group">
+                                <label for="smoker">Smoker:</label>
                                 <select id="smoker">
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
                                 </select>
-                                </div>
+                            </div>
                         </div>
+                    
                         <button class="cta-button" onclick="validateAndGenerateResult()">Submit</button>
-                        
-                
-                </div>
-                
-                <div class="result-container" id="results"></div>
-        </div>
+                    </div>
+                    
+                    <div class="result-container" id="results"></div>
+                    
 
         <script>
                 const onCampusPeople = [
