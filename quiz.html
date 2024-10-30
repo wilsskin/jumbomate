@@ -117,7 +117,7 @@
                 </ul>
         </nav>
         <div class="main-content">
-                <h1>Take Our Housing Survey</h1>
+                <h1>Take Our Housing Survey!</h1>
                 <div class="form-container">
                         <div class="form-section-label">General Information</div>
                     
@@ -264,7 +264,7 @@
                         if (user.smoker != person.smoker)
                                 score -= 20;
 
-                        return score;
+                        return Math.round(score);
                 }
             
                 function validateAndGenerateResult() {
