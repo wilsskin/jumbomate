@@ -204,36 +204,37 @@
                 document.getElementById("submit_btn").addEventListener("click", validateAndGenerateResult)
                 
                 const onCampusPeople = [
-                    { name: "Alice", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                    { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                    { name: "Carol", hometown: "Riverton", major: "Mathematics", gender: "Female", cleanliness: 9, img: "smileyface.png", wakeup: "07:30", bedtime: "22:30", smoker: false },
-                    { name: "Dave", hometown: "Lakeside", major: "Biology", gender: "Male", cleanliness: 5, img: "smileyface.png", wakeup: "08:00", bedtime: "00:00", smoker: false },
-                    { name: "Eve", hometown: "Meadowbrook", major: "English", gender: "Female", cleanliness: 7, img: "smileyface.png", wakeup: "06:45", bedtime: "23:15", smoker: false },
-                    { name: "Ginny", hometown: "Lakeview", major: "Mathematics", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup: "08:30", bedtime: "23:00", smoker: false },
-                    { name: "Nick", hometown: "Brakerston", major: "Biology", gender: "Male", cleanliness: 6.5, img: "smileyface.png", wakeup: "10:00", bedtime: "00:00", smoker: false },
-                    { name: "Mia", hometown: "Springfield", major: "Economics", gender: "Female", cleanliness: 6, img: "smileyface.png", wakeup: "08:00", bedtime: "23:00", smoker: false },
-                    { name: "Noah", hometown: "Hometownville", major: "Computer Science", gender: "Male", cleanliness: 8, img: "smileyface.png", wakeup: "09:00", bedtime: "00:00", smoker: true },
-                    { name: "Olivia", hometown: "Greenfield", major: "Physics", gender: "Female", cleanliness: 7, img: "smileyface.png", wakeup: "08:00", bedtime: "23:30", smoker: false },
-                    { name: "Paul", hometown: "Lakeside", major: "History", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup: "07:00", bedtime: "23:00", smoker: true },
-                    { name: "Quinn", hometown: "Riverton", major: "Psychology", gender: "Non-binary", cleanliness: 9, img: "smileyface.png", wakeup: "06:30", bedtime: "22:00", smoker: false },
-                    { name: "Jack", hometown: "Bergenfield", major: "Business", gender: "Male", cleanliness: 8, img: "smileyface.png", wakeup: "8:30", bedtime: "23:00", smoker: false },
-                    { name: "Lila", hometown: "Lexington", major: "Biology", gender: "Female", cleanliness: 7, img: "smileyface.png", wakeup: "10:00", bedtime: "23:30", smoker: true }
+                    { name: "Alice", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 8, img: "person1.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                    { name: "Bob", hometown: "Hometownville", major: "Physics", gender: "Male", cleanliness: 6, img: "person9.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                    { name: "Carol", hometown: "Riverton", major: "Mathematics", gender: "Female", cleanliness: 9, img: "person2.png", wakeup: "07:30", bedtime: "22:30", smoker: false },
+                    { name: "Dave", hometown: "Lakeside", major: "Biology", gender: "Male", cleanliness: 5, img: "person10.png", wakeup: "08:00", bedtime: "00:00", smoker: false },
+                    { name: "Eve", hometown: "Meadowbrook", major: "English", gender: "Female", cleanliness: 7, img: "person3.png", wakeup: "06:45", bedtime: "23:15", smoker: false },
+                    { name: "Ginny", hometown: "Lakeview", major: "Mathematics", gender: "Female", cleanliness: 8, img: "person4.png", wakeup: "08:30", bedtime: "23:00", smoker: false },
+                    { name: "Nick", hometown: "Brakerston", major: "Biology", gender: "Male", cleanliness: 6.5, img: "person11.png", wakeup: "10:00", bedtime: "00:00", smoker: false },
+                    { name: "Mia", hometown: "Springfield", major: "Economics", gender: "Female", cleanliness: 6, img: "person5.png", wakeup: "08:00", bedtime: "23:00", smoker: false },
+                    { name: "Noah", hometown: "Hometownville", major: "Computer Science", gender: "Male", cleanliness: 8, img: "person12.png", wakeup: "09:00", bedtime: "00:00", smoker: true },
+                    { name: "Olivia", hometown: "Greenfield", major: "Physics", gender: "Female", cleanliness: 7, img: "person6.png", wakeup: "08:00", bedtime: "23:30", smoker: false },
+                    { name: "Paul", hometown: "Lakeside", major: "History", gender: "Male", cleanliness: 6, img: "person13.png", wakeup: "07:00", bedtime: "23:00", smoker: true },
+                    { name: "Quinn", hometown: "Riverton", major: "Psychology", gender: "Non-binary", cleanliness: 9, img: "person7.png", wakeup: "06:30", bedtime: "22:00", smoker: false },
+                    { name: "Jack", hometown: "Bergenfield", major: "Business", gender: "Male", cleanliness: 8, img: "person14.png", wakeup: "8:30", bedtime: "23:00", smoker: false },
+                    { name: "Lila", hometown: "Lexington", major: "Biology", gender: "Female", cleanliness: 7, img: "person8.png", wakeup: "10:00", bedtime: "23:30", smoker: true }
                 ];
 
                 const offCampusPeople = [
-                    { name: "Ella", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 6, img: "smileyface.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
-                    { name: "Grace", hometown: "Oakville", major: "Psychology", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup: "08:30", bedtime: "22:00", smoker: false },
-                    { name: "Henry", hometown: "Brookside", major: "Philosophy", gender: "Male", cleanliness: 6, img: "smileyface.png", wakeup: "09:30", bedtime: "23:30", smoker: true },
-                    { name: "Isabel", hometown: "Sunnydale", major: "Psychology", gender: "Female", cleanliness: 10, img: "smileyface.png", wakeup: "07:00", bedtime: "21:30", smoker: false },
-                    { name: "Jack", hometown: "Hilltop", major: "Engineering", gender: "Male", cleanliness: 3, img: "smileyface.png", wakeup: "06:00", bedtime: "23:45", smoker: false },
-                    { name: "Karen", hometown: "Riverside", major: "Political Science", gender: "Female", cleanliness: 7, img: "smileyface.png", wakeup: "07:15", bedtime: "22:45", smoker: false },
-                    { name: "Leo", hometown: "Pinecrest", major: "Business", gender: "Male", cleanliness: 5, img: "smileyface.png", wakeup: "08:00", bedtime: "23:00", smoker: true },
-                    { name: "Riley", hometown: "Sunnydale", major: "Engineering", gender: "Female", cleanliness: 4, img: "smileyface.png", wakeup: "09:00", bedtime: "01:00", smoker: true },
-                    { name: "Sophia", hometown: "Meadowbrook", major: "Art", gender: "Female", cleanliness: 10, img: "smileyface.png", wakeup: "07:00", bedtime: "22:00", smoker: false },
-                    { name: "Tom", hometown: "Brookside", major: "Business", gender: "Male", cleanliness: 5, img: "smileyface.png", wakeup: "10:00", bedtime: "23:45", smoker: false },
-                    { name: "Uma", hometown: "Oakville", major: "Biology", gender: "Female", cleanliness: 8, img: "smileyface.png", wakeup: "08:30", bedtime: "23:00", smoker: false },
-                    { name: "Victor", hometown: "Pinecrest", major: "Chemistry", gender: "Male", cleanliness: 7, img: "smileyface.png", wakeup: "09:00", bedtime: "00:30", smoker: true },
-                    { name: "Wendy", hometown: "Hilltop", major: "Environmental Science", gender: "Female", cleanliness: 9, img: "smileyface.png", wakeup: "07:45", bedtime: "22:30", smoker: false }
+                    { name: "Ella", hometown: "Springfield", major: "Computer Science", gender: "Female", cleanliness: 6, img: "face1.png", wakeup:"09:00", bedtime:"23:00", smoker: true },
+                    { name: "Grace", hometown: "Oakville", major: "Psychology", gender: "Female", cleanliness: 8, img: "face2.png", wakeup: "08:30", bedtime: "22:00", smoker: false },
+                    { name: "Henry", hometown: "Brookside", major: "Philosophy", gender: "Male", cleanliness: 6, img: "face9.png", wakeup: "09:30", bedtime: "23:30", smoker: true },
+                    { name: "Isabel", hometown: "Sunnydale", major: "Psychology", gender: "Female", cleanliness: 10, img: "face3.png", wakeup: "07:00", bedtime: "21:30", smoker: false },
+                    { name: "Jack", hometown: "Hilltop", major: "Engineering", gender: "Male", cleanliness: 3, img: "face10.png", wakeup: "06:00", bedtime: "23:45", smoker: false },
+                    { name: "Karen", hometown: "Riverside", major: "Political Science", gender: "Female", cleanliness: 7, img: "face4.png", wakeup: "07:15", bedtime: "22:45", smoker: false },
+                    { name: "Leo", hometown: "Pinecrest", major: "Business", gender: "Male", cleanliness: 5, img: "face11.png", wakeup: "08:00", bedtime: "23:00", smoker: true },
+                    { name: "Riley", hometown: "Sunnydale", major: "Engineering", gender: "Female", cleanliness: 4, img: "face5.png", wakeup: "09:00", bedtime: "01:00", smoker: true },
+                    { name: "Sophia", hometown: "Meadowbrook", major: "Art", gender: "Female", cleanliness: 10, img: "face6.png", wakeup: "07:00", bedtime: "22:00", smoker: false },
+                    { name: "Tom", hometown: "Brookside", major: "Business", gender: "Male", cleanliness: 5, img: "face12.png", wakeup: "10:00", bedtime: "23:45", smoker: false },
+                    { name: "Uma", hometown: "Oakville", major: "Biology", gender: "Female", cleanliness: 8, img: "face7.png", wakeup: "08:30", bedtime: "23:00", smoker: false },
+                    { name: "Wilson", hometown: "Pinecrest", major: "Chemistry", gender: "Male", cleanliness: 7, img: "face13.png", wakeup: "09:00", bedtime: "00:30", smoker: true },
+                    { name: "Ariella", hometown: "Hilltop", major: "Environmental Science", gender: "Female", cleanliness: 9, img: "face8.png", wakeup: "07:45", bedtime: "22:30", smoker: false },
+                    { name: "Jonny", hometown: "Chicago", major: "Biopsychology", gender: "Male", cleanliness: 10, img: "face14.png", wakeup: "08:00", bedtime: "01:00", smoker: false }
                 ];
 
                 function timeDiff(t1, t2) {
