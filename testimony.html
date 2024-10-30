@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Testimonials</title>
     <link rel= "stylesheet" href="style.css">
     <style>
@@ -46,10 +47,19 @@
             border-radius: 8px;
             object-fit: cover;
         }
-        
+        h1{
+            position: absolute;
+        }
     </style>
 </head>
 <body>
+    <script>
+        $(document).ready(function () {
+            $("h1").animate({
+                left: $(window).width() / 2 - ($("h1").width() / 2)
+            });
+        });
+    </script>
     <nav>
         <div class="logo">
             <a href="index.html"><img src="Logo.png" alt="Logo"></a>
@@ -75,7 +85,8 @@
         </ul>
     </nav>
     <div class="main-content">
-        <h1 style="text-align: center;">User Testimonials</h1>
+        <h1 style="text-align: center;">What Our Users Are Saying</h1>
+        <br><br><br>
         <div class="container">
             
             <div class="testimonial-box">
