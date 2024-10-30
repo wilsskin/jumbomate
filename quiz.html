@@ -86,6 +86,9 @@ select {
 }
 
 
+                footer{
+                        margin-top: auto;
+                }
         </style>
     </head>
     <body>
@@ -188,10 +191,14 @@ select {
                         </div>
                     
                         <button class="cta-button" onclick="validateAndGenerateResult()">Submit</button>
-                    </div>
-                    
-                    <div class="result-container" id="results"></div>
-                    
+                        
+                
+                </div>
+                
+                <div class="result-container" id="results">
+                        <br><br><br><br><br><br><br>
+                </div>
+        </div>
 
         <script>
                 const onCampusPeople = [
@@ -303,7 +310,7 @@ select {
                         compatibilityArray.forEach(person => {
                                 newHTML += ` <div class="person">
                                                         <img src="${person.person.img}" alt="Photo of ${person.person.name}">
-                                                        <h3>${person.person.name} (Score: ${person.compatibilityScore.toFixed(2)})</h3>
+                                                        <h3>${person.person.name} (${person.compatibilityScore}% Match)</h3>
                                                         Hometown: ${person.person.hometown}<br>
                                                         Major: ${person.person.major}<br>
                                                         Gender: ${person.person.gender}<br>
@@ -316,5 +323,17 @@ select {
                         document.getElementById("results").innerHTML = newHTML
                 }
         </script>
+        <footer>
+                <div class="left-footer">
+                    <img src="Logo.png" alt="Logo">
+                    <p style="padding-top: 35px;">&copy; 2024 JumboMate. All Rights Reserved.</p>
+                </div>
+                <div class="right-footer">
+                    <a href= "index.html">Home</a>
+                    <a href= "about.html">About Us</a>
+                    <a href= "contact.html">Contact</a>
+                    <a href= "quiz.html">Quiz</a>
+                </div>
+            </footer>
     </body>
 </html>
