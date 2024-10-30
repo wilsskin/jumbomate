@@ -8,11 +8,10 @@
                 h1{
                         text-align: center;
                 }
-                /* General Form Styles */
                 .form-container {
                     max-width: 800px;
                     margin: 0 auto;
-                    padding: 50px; /* Reduced padding to limit extra space around the form */
+                    padding: 50px; 
                     padding-left: 125px;
                     padding-right: 125px;
                     background-color: #f8f8f8;
@@ -24,8 +23,8 @@
                     font-size: 24px;
                     font-weight: bold;
                     text-align: center;
-                    margin-top: 10px; /* Reduced top margin */
-                    margin-bottom: 40px; /* Reduced spacing under the section title */
+                    margin-top: 10px;
+                    margin-bottom: 40px; 
                     color: #333;
                 }
 
@@ -39,12 +38,12 @@
                     display: flex;
                     flex-direction: column;
                     text-align: center;
-                    margin-bottom: 40px; /* Uniform spacing between questions */
+                    margin-bottom: 40px;
                 }
 
                 label {
                     font-size: 16px;
-                    margin-bottom: 8px; /* Consistent spacing above inputs */
+                    margin-bottom: 8px; 
                     color: #666;
                 }
 
@@ -84,10 +83,27 @@
                     text-align: left;
                     display: none;
                 }
-
-
                 footer{
                         margin-top: auto;
+                }
+                @media (max-width: 768px) {
+                    .form-container {
+                        max-width: 90%; 
+                        padding: 20px; 
+                    }
+
+                    .form-row {
+                        flex-direction: column; 
+                    }
+
+                    .form-group {
+                        text-align: left;
+                        margin-bottom: 20px; 
+                    }
+
+                    .cta-button {
+                        font-size: 16px; 
+                    }
                 }
         </style>
     </head>
