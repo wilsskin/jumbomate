@@ -306,7 +306,7 @@
                                 document.getElementById("onCampus-error").innerText = "Please select where you want to live.";
                                 valid = false;
                         }
-
+                        if(!valid) alert("please complete name, location and cleanliness");
                         if (!valid) return;
 
                         const user = {wakeup : document.getElementById("wakeup").value, 
