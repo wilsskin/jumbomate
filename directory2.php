@@ -63,7 +63,6 @@
                                 echo "<img src='" . htmlspecialchars($row['image']) . "' alt='Photo of " . htmlspecialchars($row['name']) . "'>";
                                 echo "<h3>" . htmlspecialchars($row['name']) . "</h3>";
                                 echo "Hometown: " . htmlspecialchars($row['hometown']) . "<br>";
-                                echo "Location: " . ($row['on_campus'] ? "On Campus" : "Off Campus") . "<br>";
                                 echo "Major: " . htmlspecialchars($row['major']) . "<br>";
                                 echo "Gender: " . htmlspecialchars($row['gender']) . "<br>";
                                 echo "Cleanliness: " . htmlspecialchars($row['cleanliness']) . "/10<br>";
