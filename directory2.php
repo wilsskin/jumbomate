@@ -57,7 +57,6 @@
                                                 echo "<img src='" . $row['img'] . "' alt='Photo of " . $row['name'] . "'>";
                                                 echo "<h3>" . $row['name'] . "</h3>";
                                                 echo "Hometown: " . $row['hometown'] . "<br>";
-                                                echo "Campus: " . ($row['onCampus'] ? "On Campus" : "Off Campus") . "<br>";
                                                 echo "Major: " . $row['major'] . "<br>";
                                                 echo "Gender: " . $row['gender'] . "<br>";
                                                 echo "Cleanliness: " . $row['cleanliness'] . "/10<br>";
