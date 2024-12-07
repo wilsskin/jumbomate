@@ -147,6 +147,11 @@
                                 <label for="hometown">Hometown:</label>
                                 <input type="text" id="hometown" required>
                             </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number:</label>
+                                <input type="text" id="phone" placeholder="ex: 9175558965" required>
+                                <div id="phone-error" class="error"></div>
+                            </div>
                         </div>
                     
                         <div class="form-row">
@@ -282,32 +287,70 @@
 
                         return Math.round(score);
                 }
+                async function validate_phone(num) {
+                    const phone = document.getElementById('phone').value;
+                    const apiKey = '174c1de16569eb1b62ccdd7be239c78c';
+                    const apiUrl = `https://apilayer.net/api/validate?access_key=${apiKey}&number=${phone}&format=1`;
+
+                    try {
+                        const response = await fetch(apiUrl);
+                        const data = await response.json();
+                        console.log(data);
+                        return data.valid;
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+                }
             
                 function validateAndGenerateResult() {
                         let valid = true;
                         document.getElementById("name-error").innerText = "";
                         document.getElementById("cleanliness-error").innerText = "";
                         document.getElementById("onCampus-error").innerText = "";
+                        document.getElementById("phone").value;
 
                         const name = document.getElementById("name").value.trim();
                         if (name === "") {
+                                document.getElementById("name-error").style.display = "block";
                                 document.getElementById("name-error").innerText = "Name is required.";
                                 valid = false;
                         }
 
                         const cleanlinessScore = parseInt(document.getElementById("cleanliness").value, 10);
                         if (isNaN(cleanlinessScore) || cleanlinessScore < 1 || cleanlinessScore > 10) {
+                                document.getElementById("cleanliness-error").style.display = "block";
                                 document.getElementById("cleanliness-error").innerText = "Cleanliness must be between 1 and 10.";
                                 valid = false;
                         }
 
                         const onCampusSelection = document.getElementById("onCampus").value;
                         if (!onCampusSelection) {
-                                document.getElementById("onCampus-error").innerText = "Please select where you want to live.";
+                            document.getElementById("onCampus-error").style.display = "block";    
+                            document.getElementById("onCampus-error").innerText = "Please select where you want to live.";
                                 valid = false;
                         }
-                        if(!valid) alert("please complete name, location and cleanliness");
+                        // if(!valid) alert("please complete name, location and cleanliness");
+                        
+                        const phone_number = document.getElementById("phone").value;
+                        const phone = document.getElementById("phone").value.trim();
+                        if (phone === "" || !/^\d{10}$/.test(phone)) {
+                            document.getElementById("phone-error").style.display = "block"
+                            document.getElementById("phone-error").innerText = "Please enter a valid 10-digit phone number.";
+                            valid = false;
+                        } else {
+                            formatted_num = "1" + phone_number;
+                            phone_valid = validate_phone(formatted_num).PromiseResult;
+                            console.log(phone_valid);
+                            if (!phone_valid) {
+                                console.log("in not valid");
+                                document.getElementById("phone-error").style.display = "block"
+                                document.getElementById("phone-error").innerText = "Please enter a valid 10-digit phone number.";
+                                valid = false;
+                            }
+                        }
+                    
                         if (!valid) return;
+
 
                         const user = {wakeup : document.getElementById("wakeup").value, 
                                     bedtime : document.getElementById("bedtime").value, 
