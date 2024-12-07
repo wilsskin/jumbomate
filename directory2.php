@@ -40,8 +40,8 @@
                             <li>
                                 <a href="#" class="dropdown">Database</a>
                                 <ul>
-                                    <li><a href="directory1.html">On-Campus</a></li>
-                                    <li><a href="directory2.html">Off-Campus</a></li>
+                                    <li><a href="directory1.php">On-Campus</a></li>
+                                    <li><a href="directory2.php">Off-Campus</a></li>
                                 </ul>
                             </li>
                             <li><a href="quiz.html">Survey</a></li>
