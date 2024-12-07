@@ -1,3 +1,17 @@
+<?php 
+        $host = 'localhost';
+        $user = 'uzs5ust30l2cr';
+        $password = '32;1*Qu@qh`S';
+        $dbname = 'dbbgsnjlxnbvya';
+
+        $conn = new mysqli($host, $user, $password, $dbname);
+        if($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+        }
+        $sql = "SELECT * FROM People WHERE on_campus = 1";
+        $result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html>
         <head>
@@ -11,19 +25,6 @@
                 </style>
         </head>
         <body>
-        <?php
-            $server = "localhost";
-            $userid = "uhre7kvsp1iov"; // your user id
-            $pw = "Armann5467!"; // your pw
-            $db= "dbxzmlalr1kjuk"; // your database
-
-            $conn = new mysqli($server, $userid, $pw);
-            $conn->select_db($db);
-
-            // Query to fetch items from the database
-            $sql = "SELECT id, name, hometown, major, gender, cleanliness, wakeup, bedtime, smoker, number, image, on_campus FROM roommates WHERE on_campus = 1";
-            $result = $conn->query($sql);
-        ?>
                 <nav>
                         <div class="logo">
                             <a href="index.html"><img src="Logo.png" alt="Logo"></a>
@@ -50,29 +51,26 @@
                     </nav>
                 <div class="main-content">
                 <h1>On Campus Directory</h1>
-                <div class="result-container">
-                <?php
-                if ($result->num_rows > 0) {
-                    // Output each row from the database
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<div class='person'>";
-                        echo "<img src='" . htmlspecialchars($row['image']) . "' alt='Photo of " . htmlspecialchars($row['name']) . "'>";
-                        echo "<h3>" . htmlspecialchars($row['name']) . "</h3>";
-                        echo "Hometown: " . htmlspecialchars($row['hometown']) . "<br>";
-                        echo "Major: " . htmlspecialchars($row['major']) . "<br>";
-                        echo "Gender: " . htmlspecialchars($row['gender']) . "<br>";
-                        echo "Cleanliness: " . htmlspecialchars($row['cleanliness']) . "/10<br>";
-                        echo "Wakeup: " . htmlspecialchars($row['wakeup']) . "<br>";
-                        echo "Bedtime: " . htmlspecialchars($row['bedtime']) . "<br>";
-                        echo "Smoker: " . ($row['smoker'] ? "Yes" : "No") . "<br>";
-                        echo "</div>";
-                    }
-                } else {
-                    echo "<p>No records found.</p>";
-                }
-                $conn->close();
-                ?>   
-                </div>
+                    <div class="result-container">
+                        <?php 
+                            if ($result->num_rows >0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                                echo "<div class='person'>";
+                                                echo "<img src='" . $row['img'] . "' alt='Photo of " . $row['name'] . "'>";
+                                                echo "<h3>" . $row['name'] . "</h3>";
+                                                echo "Hometown: " . $row['hometown'] . "<br>";
+                                                echo "Campus: " . ($row['onCampus'] ? "On Campus" : "Off Campus") . "<br>";
+                                                echo "Major: " . $row['major'] . "<br>";
+                                                echo "Gender: " . $row['gender'] . "<br>";
+                                                echo "Cleanliness: " . $row['cleanliness'] . "/10<br>";
+                                                echo "Wakeup: " . $row['wakeup'] . "<br>";
+                                                echo "Bedtime: " . $row['bedtime'] . "<br>";
+                                                echo "Smoker: " . ($row['smoker'] ? "Yes" : "No");
+                                                echo "</div>";
+                                        }
+                            }
+                        ?>
+                    </div>
                 </div>
                 <footer>
                         <div class="left-footer">
@@ -88,3 +86,6 @@
                     </footer>
         </body>
 </html>
+<?php
+    $conn->close();
+?>
