@@ -1,0 +1,362 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Padding */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+nav {
+    position: fixed; 
+    top: 0;          
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #F0F5FB;
+    width: 100%;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #3172AE;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    min-width: 50px;
+}
+
+/* Navbar hover effect without shifting text */
+nav ul li a:hover {
+    color: #1F4A7A;
+    font-weight: 800px;
+}
+
+/* Dropdown Styles */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #F0F5FB;
+    padding: 15px 20px;
+    list-style-type: none;
+    border-radius: 4px;
+    z-index: 1;
+    width: 160px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li a {
+    color: #3172AE;
+    padding: 8px;
+    display: block;
+}
+
+/* Dropdown Caret */
+nav ul li a.dropdown::after {
+    content: "▾";
+    margin-left: 5px;
+}
+
+/* Banner Styles */
+.banner {
+    width: 100vw;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-image: url('HeroBanner.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin-top: -5%;
+}
+
+/* Overlay Box on Banner */
+.cta-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 25vw;
+    height: 15vh;
+    padding: 1vw;
+    margin-left: 5vw;
+    margin-bottom: 15vh;
+    margin-top: 20vh;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-box .cta-button, .main-content .cta-button {
+    padding: 1vw 3.5vw;
+    background-color: #3172AE;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5vw;
+    border-radius: 5px;
+    display: block;
+    margin: 2vh auto;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #1F4A7A;
+}
+
+.main-content {
+    padding: 105px 90px 20px;
+    box-sizing: border-box;
+}
+
+.main-content h1 {
+    font-size: 32px;
+    color: #3172AE;
+    margin-bottom: 35px;
+    font-family: DM sans-serif;
+}
+
+.main-content h2 {
+    font-size: 28px;
+    color: #3172AE;
+    margin-bottom: 10px;
+}
+
+.main-content h4 {
+    font-size: 20px;
+    color: #3172AE;
+    margin-top: 30px;
+    margin-bottom: 8px;
+}
+
+.main-content p {
+    font-size: 16px;
+    color: #545454;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 50px 0;
+    text-align: left;
+}
+
+.how-it-works h2 {
+    color: #3172AE;
+    font-size: 28px;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+}
+
+.step img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.step-caption {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #F0F5FB;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .left-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 16px;
+}
+
+footer .left-footer img {
+    width: 40px;
+    height: 40px;
+}
+
+footer .right-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: right;
+}
+
+footer .right-footer a {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Directory Styling */
+.result-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.person:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.person img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.person h3 {
+    text-align: center;
+    font-size: 1.2em;
+    color: #3172AE;
+    margin-bottom: 8px;
+}
+
+.person p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.person-info div {
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Added Box Styles */
+.box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box h2 {
+    color: #3172AE;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.box p {
+    text-align: justify;
+    margin: 0;
+    color: #545454;
+    line-height: 1.6;
+}
+
+.image-box img {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .box {
+        text-align: center;
+    }
+    .image-box img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .banner {
+        height: 50vh;
+        margin-top: 65px;
+    }
+
+    .cta-box {
+        width: 70%;
+    }
+
+    .steps {
+        flex-direction: column;
+        padding: 0;
+    }
+}
