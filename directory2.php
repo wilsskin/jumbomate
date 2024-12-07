@@ -16,14 +16,7 @@
                 $pw = "Armann5467!"; // your pw
                 $db= "dbxzmlalr1kjuk"; // your database
 
-                $conn = new mysqli($server, $userid, $pw);
-                //Check connection
-                if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-                }
-                echo "Connected successfully<br>";
-                $conn->select_db($db);
-
+                $conn = new mysqli($server, $userid, $pw);        
                 // Query to fetch items from the database
                 $sql = "SELECT id, name, hometown, major, gender, cleanliness, wakeup, bedtime, smoker, number, image, on_campus FROM roommates WHERE on_campus = 0";
                 $result = $conn->query($sql);

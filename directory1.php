@@ -18,11 +18,6 @@
             $db= "dbxzmlalr1kjuk"; // your database
 
             $conn = new mysqli($server, $userid, $pw);
-            //Check connection
-            if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-            }
-            echo "Connected successfully<br>";
             $conn->select_db($db);
 
             // Query to fetch items from the database
