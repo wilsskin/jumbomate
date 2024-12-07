@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel= "stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         .container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            grid-gap: 20px; 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             width: 80%;
             margin: 0 auto;
             padding: 20px;
@@ -32,14 +32,13 @@
         }
 
         @media (max-width: 900px) {
-        .container {
-            grid-template-columns: 1fr; 
-            width: 100%;
+            .container {
+                width: 100%;
+            }
+            .box {
+                text-align: center;
+            }
         }
-        .box {
-            text-align: center;
-        }
-    }
     </style>
 </head>
 <body>
@@ -75,7 +74,6 @@
             <div class="box image-box">
                 <img src="dorm.jpg" alt="Photo 1">
             </div>
-
             <div class="box">
                 <h2>Our Mission</h2>
                 <p>
@@ -91,6 +89,9 @@
                 </p>
             </div>
 
+            <div class="box image-box">
+                <img src="roomies.jpg" alt="Photo 2">
+            </div>
             <div class="box">
                 <h2>How It Works</h2>
                 <p>
@@ -110,13 +111,8 @@
             </div>
 
             <div class="box image-box">
-                <img src="roomies.jpg" alt="Photo 2">
-            </div>
-
-            <div class="box image-box">
                 <img src="hugging.jpg" alt="Photo 3">
             </div>
-
             <div class="box">
                 <h2>Why It's Important</h2>
                 <p>
@@ -132,6 +128,7 @@
                     of belonging in their new home away from home.
                 </p>
             </div>
+
         </div>
     </div>
     <footer>
@@ -140,12 +137,11 @@
             <p style="padding-top: 35px;">&copy; 2024 JumboMate. All Rights Reserved.</p>
         </div>
         <div class="right-footer">
-            <a href= "index.html">Home</a>
-            <a href= "about.html">About Us</a>
-            <a href= "contact.html">Contact</a>
-            <a href= "quiz.html">Quiz</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="quiz.html">Quiz</a>
         </div>
     </footer>
 </body>
 </html>
-
