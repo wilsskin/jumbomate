@@ -9,6 +9,7 @@
 <body>
 
     <!-- Navbar -->
+<<<<<<< HEAD
     <nav>
         <div class="logo">
             <a href="index.html"><img src="Logo.png" alt="Logo"></a>
@@ -39,20 +40,99 @@
         <div class="cta-box">
             <a href='quiz.html' style="text-decoration: none;"><button class="cta-button">Take the Survey</button></a>
         </div>
+=======
+<!-- Navbar -->
+<nav>
+    <div class="logo">
+        <a href="index.html"><img src="NewLogo.png" alt="Logo"></a>
+>>>>>>> 7cd2bb0 (frontend changes)
     </div>
+    <button class="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+            <a href="#" class="dropdown">About</a>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="testimony.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="dropdown">Database</a>
+            <ul>
+                <li><a href="directory1.html">On-Campus</a></li>
+                <li><a href="directory2.html">Off-Campus</a></li>
+            </ul>
+        </li>
+        <li><a href="quiz.html">Survey</a></li>
+    </ul>
 
-    <!-- Main Content -->
-    <!-- Main Content -->
-<div class="main-content">
-        <h1 style="color: black; margin-top: -150px;">JumboMate</h1> <!-- Added JumboMate heading -->
-        <h2>Looking for a roommate? Look no further!</h2>
-        <h4>On-Campus Housing</h4>
-        <p>We offer a variety of roommate matching options for students living on-campus. Our service ensures that you find compatible roommates who share your interests and values, making your campus living experience enjoyable and fulfilling.</p>
-        
-        <h4>Off-Campus Housing</h4>
-        <p>For those seeking independence, our roommate matching service also extends to off-campus housing. We help juniors, seniors, and graduate students connect with reliable roommates in convenient locations near campus, providing guidance and resources for a smooth transition.</p>
-    </div>
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('nav ul');
+
+// Add click event listener to toggle the 'active' class
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Optional: Close menu when clicking outside of it
+document.addEventListener('click', (event) => {
+    if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        navMenu.classList.remove('active');
+    }
+});
+
+
+</script>
     
+</nav>
+
+    <!-- Banner with Background Image -->
+<div class="banner">
+    <!-- This div only holds the banner image -->
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h4 style="font-size: 26px; max-width: 560px;">Discover your perfect roommate at Tufts with</h4>
+    <h1>JumboMate</h1>
+
+    <!-- CTA Button placed here, inside main-content -->
+    <div class="cta-box">
+        <a href='quiz.html' style="text-decoration: none;">
+            <button class="cta-button">Take the Survey</button>
+        </a>
+    </div>
+</div>
+
+
+
+<!-- Second Content -->
+<div class="second-content">
+    <h2>Looking for a roommate? Look no further!</h2>
+    
+    <div class="housing-options">
+        <table class="housing-table">
+            <thead>
+                <tr>
+                    <th>On-Campus</th>
+                    <th>Off-Campus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="on-campus">We offer a variety of roommate matching options for students living on-campus. Our service ensures that you find compatible roommates who share your interests and values, making your campus living experience enjoyable and fulfilling.</td>
+                    <td class="off-campus">For those seeking independence, our roommate matching service also extends to off-campus housing. We help juniors, seniors, and graduate students connect with reliable roommates in convenient locations near campus, providing guidance and resources for a smooth transition.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
 
     <!-- How It Works Section -->
     <section class="main-content">
