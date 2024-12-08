@@ -1,4 +1,3 @@
-
 /* Basic Reset */
 * {
     margin: 0;
@@ -6,76 +5,15 @@
     box-sizing: border-box;
 }
 
-/* Page Padding */
 body {
     font-family: Arial, sans-serif;
 }
 
-/* Default: Hide hamburger menu */
-/* Default: Hide hamburger menu */
-.hamburger {
-    display: none;
-}
-
-/* Show hamburger menu and hide nav links at 750px or below */
-@media (max-width: 750px) {
-    .hamburger {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    nav ul {
-        visibility: hidden;
-        opacity: 0;
-        flex-direction: column;
-        background-color: #F0F5FB;
-        position: absolute;
-        top: 60px; /* Adjust based on nav height */
-        right: 0;
-        width: 200px;
-        padding: 20px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        transition: visibility 0.3s ease, opacity 0.3s ease;
-    }
-
-    nav ul.active {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    /* Dropdown styles inside the hamburger menu */
-    nav ul li ul {
-        display: none; /* Hide dropdown links initially */
-        flex-direction: column; /* Ensure vertical alignment */
-        background-color: #F0F5FB; /* Ensure dropdown is visible in mobile */
-        padding: 10px;
-        margin: 0;
-        width: 100%; /* Make dropdown full width in mobile */
-    }
-
-    nav ul li:hover > ul {
-        display: flex; /* Show dropdown links on hover in mobile */
-    }
-
-    nav ul li ul li a {
-        display: block; /* Ensure dropdown links are visible */
-        color: #3172AE; /* Maintain link color */
-        padding: 10px 15px; /* Adjust padding for better spacing */
-        text-decoration: none; /* Remove underline */
-    }
-
-    nav ul li ul li a:hover {
-        color: #1F4A7A; /* Highlight links on hover */
-    }
-}
-
+/* Navbar */
 nav {
-    position: fixed; 
-    top: 0;          
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,211 +27,232 @@ nav {
     height: 42px;
 }
 
-nav ul {
+.nav-links {
     list-style-type: none;
     display: flex;
     gap: 20px;
-    transition: transform 0.3s ease;
 }
 
-nav ul li {
+.nav-links li {
     position: relative;
 }
 
-nav ul li a {
+.nav-links li a {
     color: #3172AE;
     text-decoration: none;
     padding: 10px 15px;
     font-weight: 500;
     font-size: 18px;
-    transition: color 0.3s ease;
-    min-width: 50px;
-}
-
-/* Navbar hover effect without shifting text */
-nav ul li a:hover {
-    color: #1F4A7A;
 }
 
 /* Dropdown Styles */
-nav ul li ul {
-    display: none; /* Hide dropdowns by default */
+.nav-links li .dropdown-menu {
+    display: none;
     position: absolute;
     top: 100%;
+    left: 0;
     background-color: #F0F5FB;
-    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     list-style-type: none;
+    padding: 10px 0;
+    z-index: 10;
     border-radius: 4px;
-    z-index: 1;
-    width: 160px;
 }
 
-nav ul li:hover > ul {
-    display: block; /* Show dropdown on hover */
+.nav-links li:hover .dropdown-menu {
+    display: block;
 }
 
-nav ul li ul li a {
+.nav-links li .dropdown-menu li a {
+    display: block;
     color: #3172AE;
-    padding: 8px;
-    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-/* Dropdown Caret */
-nav ul li a.dropdown::after {
-    content: "▾";
-    margin-left: 5px;
+.nav-links li .dropdown-menu li a:hover {
+    background-color: #E0E7F3;
 }
 
-
-/* Banner Styles */
-.banner {
-    width: 50%;
-    height: 100%;
-    background-image: url('HeroBanner.png'); /* Replace with your image */
-    background-size: cover; /* Ensures the image covers the banner without distortion */
-    background-position: center; /* Centers the image */
-    position: absolute; /* Allows you to control the position relative to the screen */
-    right: 0; /* Aligns the banner to the right side */
-    min-height: 200px; /* Set a minimum height for the banner */
-    max-height: 400px; /* Ensures the height doesn't exceed 400px */
-    margin-top: 75px;
-    z-index: -1; /* Places the banner behind the navbar */
-  }
-  
-
-
-
-
-/* Overlay Box on Banner */
-.cta-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    width: 25vw; /* Responsive width */
-    height: 18vh; /* Responsive height */
-    padding: 1vw; /* Responsive padding */
-    margin-bottom: 15vh;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cta-box .cta-button, .main-content .cta-button {
-    padding: 1vw 3.5vw; /* Responsive padding */
-    background-color: #3172AE;
-    color: #fff;
-    border: none;
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
-    font-size: 1.5vw; /* Responsive font size */
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #3172AE;
     border-radius: 5px;
-    display: block;
-    margin: 2vh auto;
-    text-align: center;
+}
+
+/* Mobile Styles: Below 750px */
+@media (max-width: 750px) {
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        right: 0;
+        background-color: #F0F5FB;
+        width: 200px;
+        padding: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .nav-links a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .dropdown-menu {
+        position: static; /* Ensure dropdowns work in mobile */
+        box-shadow: none; /* Remove additional styles */
+    }
+
+    .dropdown-menu li a {
+        padding: 8px;
+    }
+}
+
+/* Banner Section */
+.banner {
+    display: flex;
+    height: 400px;
+    margin-top: 75px;
+}
+
+.banner-content {
+    width: 50%; /* Left side occupies half the width */
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.banner-image {
+    width: 50%; /* Right side occupies half the width */
+    background-image: url('HeroBanner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-content h4 {
+    font-size: 26px;
+    color: #3172AE;
+    margin-bottom: 8px;
+}
+
+.banner-content h1 {
+    font-size: 42px;
+    color: #000;
+    margin: 10px 0;
+    font-family: "DM Sans", sans-serif;
+}
+
+.banner-content .cta-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #3172AE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect for CTA Button */
-.cta-box .cta-button:hover, .main-content .cta-button:hover {
-    background-color: #FFA500; /* Orange color on hover */
+.banner-content .cta-button:hover {
+    background-color: #F08080;
 }
 
-.main-content {
-    padding: 105px 90px 20px;
-    box-sizing: border-box;
-    padding-top: 150px;
-    position: relative
-}
-
+/* Second Content Section */
 .second-content {
-    padding: 105px 90px 20px;
-    box-sizing: border-box;
-    padding-top: 250px;
-    position: relative
+    padding: 50px 20px;
+    margin-top: 20px;
+    text-align: center;
 }
 
-/* Table styling */
-.housing-options {
-    margin-top: 20px;
+.second-content h2 {
+    font-size: 28px;
+    color: #3172AE;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #F0F5FB;
+    padding: 10px 30px; /* Reduced padding for a slimmer footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align the content */
+}
+
+footer .left-footer img {
+    width: 50px; /* Slightly smaller logo if needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin-bottom: 5px; /* Reduce spacing below the logo */
+}
+
+/* Button Container with Shadow */
+.cta-box {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 30px; /* Keep the box size consistent */
+    border-radius: 8px; /* Rounded corners for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    text-align: center; /* Center-align the text inside */
+    margin-top: 20px; /* Add spacing between the box and other elements */
+}
+
+/* Button Styling */
+.cta-button {
+    padding: 20px 40px; /* Increased padding for a larger button */
+    background-color: #3172AE; /* Original blue background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Show pointer on hover */
+    font-size: 18px; /* Increase font size for emphasis */
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #F08080; /* Orange background on hover */
 }
 
 .housing-table {
     width: 100%;
-    border-collapse: collapse; /* Collapsing the borders between cells */
+    border-collapse: collapse; /* Ensures borders don't double up */
+}
+
+.housing-table th,
+.housing-table td {
+    text-align: left; /* Align text to the left */
+    padding: 15px 20px; /* Add padding for spacing inside cells */
+    vertical-align: top; /* Align content to the top of the cell */
 }
 
 .housing-table th {
-    font-size: 1.2rem;
+    font-size: 22px;
     font-weight: bold;
-    text-align: left;
-    padding-top: 15px;
 }
 
-/* Styling for the table columns (On-Campus & Off-Campus) */
 .housing-table td {
-    font-size: 1rem;
-    padding-top: 15px;
-    vertical-align: top; /* Aligns text at the top of the cell */
-}
-
-/* Add borders around each column (left and right) */
-.housing-table .on-campus-column, .housing-table .off-campus-column {
-    border: 2px solid #FFA500; /* Orange border */
-    padding: 20px;
-}
-
-/* Ensure equal column width for both On-Campus and Off-Campus */
-.housing-table .on-campus-column, .housing-table .off-campus-column {
-    width: 50%; /* Same width for both columns */
-}
-
-/* Responsive styling for smaller screens */
-@media (max-width: 768px) {
-    .housing-table th, .housing-table td {
-        font-size: 1rem; /* Adjust font size for smaller screens */
-    }
-    .housing-table .on-campus-column, .housing-table .off-campus-column {
-        width: 100%; /* Stack columns on small screens */
-    }
-}
-
-
-
-.main-content h4 {
-    font-size: 28px;
-    color: #3172AE;
-    margin-top: 0px;
-    margin-bottom: 8px;
-}
-
-
-
-.main-content h1 {
-    font-size: 42px;
-    color: #000000;
-    margin-bottom: 35px;
-    margin-top: 20px;
-    font-family: DM sans-serif;
-}
-
-.main-content h2 {
-    font-size: 28px;
-    color: #3172AE;
-    margin-bottom: 10px;
-}
-
-.main-content h4 {
-    font-size: 20px;
-    color: #3172AE;
-    margin-top: 30px;
-    margin-bottom: 8px;
-}
-
-.main-content p {
-    font-size: 16px;
-    color: #545454;
-    line-height: 1.6;
-    max-width: 700px;
+    font-size: 18px;
 }
 
 /* How It Works Section */
@@ -335,144 +294,13 @@ nav ul li a.dropdown::after {
     color: #333;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #F0F5FB;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-}
-
-footer .left-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 16px;
-}
-
-footer .left-footer img {
-    width: 40px;
-    height: 40px;
-}
-
-footer .right-footer {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: right;
-}
-
-footer .right-footer a {
-    text-decoration: none;
-    font-size: 16px;
-}
-
-
-/* Directory Styling */
-.result-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-}
-
-.person {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ddd;
-    padding: 15px;
-    width: 250px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.person:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.person img {
-    width: 150px;
-    height: 150px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.person h3 {
-    text-align: center;
-    font-size: 1.2em;
+.main-content h2 {
+    font-size: 28px;
     color: #3172AE;
-    margin-bottom: 8px;
-}
-
-.person p {
-    font-size: 0.9em;
-    color: #555;
-    margin: 5px 0;
+    margin-bottom: 10px;
     text-align: center;
 }
 
-.person-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    margin-top: 10px;
-    gap: 5px; /* Adds space between the information rows */
-}
-
-.person-info div {
-    font-size: 0.9em;
-    color: #333;
-}
-
-
-@media (max-width: 900px) {
-    .cta-box {
-        display: none;
-    }
-    
-    .banner {
-        margin-top: -12px;
-    }
-    h1 {
-        font-size: 1.5em;
-        text-align: center;
-    }
-    body {
-        margin-top: 50px;
-    }
-    .cta-button {
-        width: 100%; 
-        height: 30px;
-        padding: 15px;
-    }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 550px) {
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .banner {
-        height: 50vh;
-        margin-top: 65px;
-    }
-
-    .cta-box {
-        width: 70%;
-    }
-
-    .steps {
-        flex-direction: column;
-        padding: 0;
-    }
+.main-content {
+    padding-bottom: 10px;
 }
