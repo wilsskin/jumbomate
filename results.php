@@ -230,8 +230,8 @@
                             echo "Major: " . $row['major'] . "<br>";
                             echo "Gender: " . $row['gender'] . "<br>";
                             echo "Cleanliness: " . $row['cleanliness'] . "/10<br>";
-                            echo "Wakeup: " . $row['wakeup'] . "<br>";
-                            echo "Bedtime: " . $row['bedtime'] . "<br>";
+                            echo "Wakeup: " . date("H:i", strtotime($row['wakeup'])) . "<br>";
+                            echo "Bedtime: " . date("H:i", strtotime($row['bedtime'])) . "<br>";
                             echo "Smoker: " . ($row['smoker'] ? "Yes" : "No");
                             echo "</div>";
                             

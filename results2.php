@@ -235,8 +235,8 @@
                             echo "Major: " . $row['major'] . "<br>";
                             echo "Gender: " . $row['gender'] . "<br>";
                             echo "Cleanliness: " . $row['cleanliness'] . "/10<br>";
-                            echo "Wakeup: " . $row['wakeup'] . "<br>";
-                            echo "Bedtime: " . $row['bedtime'] . "<br>";
+                            echo "Wakeup: " . date("H:i", strtotime($row['wakeup'])) . "<br>";
+                            echo "Bedtime: " . date("H:i", strtotime($row['bedtime'])) . "<br>";
                             echo "Smoker: " . ($row['smoker'] ? "Yes" : "No");
                             echo "</div>";
                             
@@ -249,12 +249,11 @@
                         $gender = $_POST['gender'] ?? '';
                         $cleanliness = (int)($_POST['cleanliness'] ?? 0);
                         $img = 'default.png';
-                        $wakeup = $_POST['wakeup'] ?? '00:00';
-                        $bedtime = $_POST['bedtime'] ?? '00:00';
+                        $wakeup = $_POST['wakeup'];
+                        $bedtime = $_POST['bedtime'];
                         $smoker = (int)($_POST['smoker'] ?? 0);
                         $onCampus = ($_POST['onCampus'] === 'true') ? 1 : 0;
                         $phoneNumber = formatPhoneNumber($_POST['phone']);
-                        error_log(print_r($_POST['bedtime'], true));
                         $stmt->bind_param("issssisssssi", $id, $name, $hometown, $major, $gender, $cleanliness, $img, $wakeup, $bedtime, $smoker, $phoneNumber, $onCampus);
                         $stmt->execute();
                         $stmt->close();
