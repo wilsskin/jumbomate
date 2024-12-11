@@ -17,6 +17,7 @@
         <head>
                 <meta charset="UTF-8">
                 <link rel= "stylesheet" href="style.css">
+                <link rel= "stylesheet" href="style2.css">
                 <style type="text/css">
                         h1 {
                                 text-align: center;
@@ -25,30 +26,35 @@
                 </style>
         </head>
         <body>
-                <nav>
-                        <div class="logo">
-                            <a href="index.html"><img src="NewLogo.png" alt="Logo"></a>
-                        </div>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li>
-                                <a href="#" class="dropdown">About</a>
-                                <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="testimony.html">Testimonials</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="dropdown">Database</a>
-                                <ul>
-                                    <li><a href="directory1.php">On-Campus</a></li>
-                                    <li><a href="directory2.php">Off-Campus</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="quiz.html">Survey</a></li>
-                        </ul>
-                    </nav>
+        <nav>
+        <div class="logo">
+            <a href="index.html"><img src="NewLogo.png" alt="Logo"></a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#" class="dropdown">About</a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimony.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dropdown">Directory</a>
+                <ul class="dropdown-menu">
+                    <li><a href="directory1.php">On-Campus</a></li>
+                    <li><a href="directory2.php">Off-Campus</a></li>
+                </ul>
+            </li>
+            <li><a href="quiz.html">Survey</a></li>
+        </ul>
+    </nav>
                 <div class="main-content">
                 <h1>On Campus Directory</h1>
                     <div class="result-container">

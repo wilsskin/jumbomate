@@ -150,8 +150,7 @@
         </style>
     </head>
     <body>
-        <!-- Navbar -->
-           <!-- Navbar -->
+        <!-- Navbar --> 
            <nav>
         <div class="logo">
             <a href="index.html"><img src="NewLogo.png" alt="Logo"></a>
