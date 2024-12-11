@@ -115,7 +115,9 @@
                     transition: background-color 0.2s;
                     margin-top: 20px;
                 }
-
+                .cta-button:hover {
+                    background-color: #F08080; /* Orange background on hover */
+                }
                 /* Error Styling */
                 .error {
                     color: #d9534f;

@@ -50,7 +50,16 @@
         <link rel="stylesheet" href="style2.css">
         <style type="text/css">
                 h1{
-                        text-align: center;
+                    text-align: center;
+                    color: #000;
+                }
+                .h1::after {
+                    content: "";
+                    display: block;
+                    width: 350px; /* Adjust width as desired */
+                    height: 2px; /* Adjust thickness */
+                    background-color: #F08080; /* Coral color for the line */
+                    margin-top: 12px;
                 }
                 .form-container {
                     max-width: 800px;
@@ -184,7 +193,7 @@
     </nav>
     <div class="main-content">
         <h1>Thank You For Joining JumboMate</h1>
-        <h1>Here Are Your Matches</h1>
+        <h2>Here Are Your Matches</h2>
     <div class="result-container" id="results">
 
 

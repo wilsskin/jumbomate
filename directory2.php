@@ -21,6 +21,14 @@
                         h1{
                                 text-align: center;
                         }
+                        .main-content h1::after {
+                            content: "";
+                            display: block;
+                            width: 350px; /* Adjust width as desired */
+                            height: 2px; /* Adjust thickness */
+                            background-color: #F08080; /* Coral color for the line */
+                            margin-top: 12px;
+                        }
                 </style>
         </head>
         <body>
