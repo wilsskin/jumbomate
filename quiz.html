@@ -12,8 +12,8 @@
                     max-width: 800px;
                     margin: 0 auto;
                     padding: 50px; 
-                    padding-left: 125px;
-                    padding-right: 125px;
+                    padding-left: 200px;
+                    padding-right: 200px;
                     background-color: #f8f8f8;
                     border-radius: 10px;
                     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -28,10 +28,21 @@
                     color: #333;
                 }
 
+                .form-section-label::after {
+                    content: "";
+                    display: block;
+                    width: 350px; /* Adjust width as desired */
+                    height: 2px; /* Adjust thickness */
+                    background-color: #F08080; /* Coral color for the line */
+                    margin-top: 12px;
+                    margin: 0 auto;
+                }
+
                 .form-row {
                     display: flex;
                     flex-direction: column;
                     padding: 0;
+                    width: 100%;
                 }
 
                 .form-group {
@@ -39,6 +50,7 @@
                     flex-direction: column;
                     text-align: center;
                     margin-bottom: 40px;
+                    width: 100%;
                 }
 
                 label {
@@ -67,7 +79,7 @@
                     padding: 12px;
                     font-size: 18px;
                     color: #fff;
-                    background-color: #6496fa;
+                    background-color: #3172AE;
                     border: none;
                     border-radius: 8px;
                     cursor: pointer;
@@ -140,7 +152,7 @@
     </nav>
     
         <div class="main-content">
-                <h1>Take Our Housing Survey!</h1>
+                <h1 style="padding-top: 20px; padding-bottom: 20px;">Take Our Housing Survey!</h1>
                 <div class="form-container">
                         <div class="form-section-label">General Information</div>
                         <form id="survey-form" method="POST" action="results.php">
