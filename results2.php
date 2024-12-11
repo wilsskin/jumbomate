@@ -37,6 +37,9 @@
                 }
                 return round($score);
         }
+        function formatPhoneNumber($phoneNumber) {
+                return substr($phoneNumber, 0, 3) . '-' . substr($phoneNumber, 3, 3) . '-' . substr($phoneNumber, 6);
+        }
 ?>
 <!DOCTYPE html>
 <html>
@@ -180,7 +183,8 @@
         </ul>
     </nav>
     <div class="main-content">
-        <h1>Here are Your Potential Matches</h1>
+        <h1>Thank You For Joining JumboMate</h1>
+        <h1>Here Are Your Matches</h1>
     <div class="result-container" id="results">
 
 
@@ -226,6 +230,7 @@
                             echo "<div class='person'>";
                             echo "<img src='" . $row['img'] . "' alt='Photo of " . $row['name'] . "'>";
                             echo "<h3>" . $row['name'] . "(" . $score . "% match)</h3>";
+                            echo "<h3>". $row['phone_number'] ."</h3>";
                             echo "Hometown: " . $row['hometown'] . "<br>";
                             echo "Major: " . $row['major'] . "<br>";
                             echo "Gender: " . $row['gender'] . "<br>";
@@ -236,25 +241,26 @@
                             echo "</div>";
                             
                         }
-
-
+                        $stmt = $conn->prepare("INSERT INTO `People`(`id`, `name`, `hometown`, `major`, `gender`, `cleanliness`, `img`, `wakeup`, `bedtime`, `smoker`, `phone_number`, `on_campus`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); 
+                        $id = null;
+                        $name = $_POST['name'] ?? '';
+                        $hometown = $_POST['hometown'] ?? '';
+                        $major = $_POST['major'] ?? '';
+                        $gender = $_POST['gender'] ?? '';
+                        $cleanliness = (int)($_POST['cleanliness'] ?? 0);
+                        $img = 'default.png';
+                        $wakeup = $_POST['wakeup'] ?? '00:00';
+                        $bedtime = $_POST['bedtime'] ?? '00:00';
+                        $smoker = (int)($_POST['smoker'] ?? 0);
+                        $onCampus = ($_POST['onCampus'] === 'true') ? 1 : 0;
+                        $phoneNumber = formatPhoneNumber($_POST['phone']);
+                        error_log(print_r($_POST['bedtime'], true));
+                        $stmt->bind_param("issssisssssi", $id, $name, $hometown, $major, $gender, $cleanliness, $img, $wakeup, $bedtime, $smoker, $phoneNumber, $onCampus);
+                        $stmt->execute();
+                        $stmt->close();
                 }
         ?>
         </div>
-                <form method="POST" action="results2.php">
-                        <input type="hidden" name="name" value="<?php echo htmlspecialchars($user['name']); ?>">
-                        <input type="hidden" name="hometown" value="<?php echo htmlspecialchars($user['hometown']); ?>">
-                        <input type="hidden" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>">
-                        <input type="hidden" name="major" value="<?php echo htmlspecialchars($user['major']); ?>">
-                        <input type="hidden" name="gender" value="<?php echo htmlspecialchars($user['gender']); ?>">
-                        <input type="hidden" name="onCampus" value="<?php echo htmlspecialchars($user['onCampus']); ?>">
-                        <input type="hidden" name="wakeup" value="<?php echo htmlspecialchars($user['wakeup']); ?>">
-                        <input type="hidden" name="bedtime" value="<?php echo htmlspecialchars($user['bedtime']); ?>">
-                        <input type="hidden" name="smoker" value="<?php echo htmlspecialchars($user['smoker']); ?>">
-                        <input type="hidden" name="cleanliness" value="<?php echo htmlspecialchars($user['cleanliness']); ?>">
-
-                        <button type="submit" class="cta-button">Save & Show Match Contact Info</button>
-                </form>
         </div>
         <footer>
                 <div class="left-footer">
