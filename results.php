@@ -151,7 +151,8 @@
     </head>
     <body>
         <!-- Navbar -->
-    <nav>
+           <!-- Navbar -->
+           <nav>
         <div class="logo">
             <a href="index.html"><img src="NewLogo.png" alt="Logo"></a>
         </div>
@@ -171,13 +172,13 @@
                 </ul>
             </li>
             <li>
-                <a href="#" class="dropdown">Database</a>
+                <a href="#" class="dropdown">Directory</a>
                 <ul class="dropdown-menu">
                     <li><a href="directory1.php">On-Campus</a></li>
                     <li><a href="directory2.php">Off-Campus</a></li>
                 </ul>
             </li>
-            <li><a href="quiz.php">Survey</a></li>
+            <li><a href="quiz.html">Survey</a></li>
         </ul>
     </nav>
     <div class="main-content">
