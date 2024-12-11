@@ -27,7 +27,7 @@
         <body>
                 <nav>
                         <div class="logo">
-                            <a href="index.html"><img src="Logo.png" alt="Logo"></a>
+                            <a href="index.html"><img src="NewLogo.png" alt="Logo"></a>
                         </div>
                         <ul>
                             <li><a href="index.html">Home</a></li>
@@ -73,7 +73,7 @@
                 </div>
                 <footer>
                         <div class="left-footer">
-                            <img src="Logo.png" alt="Logo">
+                            <img src="NewLogo.png" alt="Logo">
                             <p style="padding-top: 35px;">&copy; 2024 JumboMate. All Rights Reserved.</p>
                         </div>
                         <div class="right-footer">
