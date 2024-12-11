@@ -9,14 +9,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f9f9f9;
+            align-items: center;
+            
         }
         .container {
             width: 80%;
             margin: 0 auto;
             padding: 20px;
+            align-items: center;
         }
         .testimonial-box {
             background-color: #fff;
@@ -74,30 +75,27 @@
             .testimonial-text {
                 text-align: center; 
             }
-            body {
-                margin-top: 80px;
-            }
         }
         
     </style>
 </head>
 <body>
-    <script>
-        $(document).ready(function () {
-            $("h1").animate({
-                left: $(window).width() / 2 - ($("h1").width() / 2)
-            });
-        });
-    </script>
+    
+    <!-- Navbar -->
     <nav>
         <div class="logo">
-            <a href="index.html"><img src="Logo.png" alt="Logo"></a>
+            <a href="index.html"><img src="NewLogo.png" alt="Logo"></a>
         </div>
-        <ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li>
                 <a href="#" class="dropdown">About</a>
-                <ul>
+                <ul class="dropdown-menu">
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="testimony.html">Testimonials</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -105,16 +103,18 @@
             </li>
             <li>
                 <a href="#" class="dropdown">Database</a>
-                <ul>
+                <ul class="dropdown-menu">
                     <li><a href="directory1.php">On-Campus</a></li>
                     <li><a href="directory2.php">Off-Campus</a></li>
                 </ul>
             </li>
-            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="quiz.html">Survey</a></li>
         </ul>
     </nav>
+    
+
     <div class="main-content">
-        <h1 style="text-align: center;">What Our Users Are Saying</h1>
+        <h1 style="text-align: center; align-items: center;">What Our Users Are Saying</h1>
         <br><br><br>
         <div class="container">
             
@@ -196,13 +196,13 @@
                 </div>
             </div>
         </div>
-        <ul style="list-style-type:none; text-align:center; display: inline;">
+        <ul style="text-align: center; align-items: center;">
             <li><h2>Ease the Transition</h2></li>
             <li><h2>Achieve Balance</h2></li>
             <li><h2>Find the Perfect Match</h2></li>
         </ul>  
         <br>
-        <div>
+        <div class="mainCTA">
             <a href="quiz.html" style="text-decoration: none;"><button class="cta-button">Take the Survey</button></a>
         </div>
 
@@ -219,5 +219,17 @@
             <a href= "quiz.html">Quiz</a>
         </div>
     </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
 </body>
 </html>

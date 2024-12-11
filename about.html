@@ -10,7 +10,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            width: 80%;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -24,12 +24,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
         }
         .image-box img {
             width: 100%;
             height: auto;
             border-radius: 8px;
+            max-width: 700px;
+            border: none; /* No border by default */
+            border: 2.5px solid #F08080;
         }
+
+       
 
         @media (max-width: 900px) {
             .container {
@@ -42,15 +48,21 @@
     </style>
 </head>
 <body>
-    <nav>
+     <!-- Navbar -->
+     <nav>
         <div class="logo">
-            <a href="index.html"><img src="Logo.png" alt="Logo"></a>
+            <a href="index.html"><img src="NewLogo.png" alt="Logo"></a>
         </div>
-        <ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li>
                 <a href="#" class="dropdown">About</a>
-                <ul>
+                <ul class="dropdown-menu">
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="testimony.html">Testimonials</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -58,7 +70,7 @@
             </li>
             <li>
                 <a href="#" class="dropdown">Database</a>
-                <ul>
+                <ul class="dropdown-menu">
                     <li><a href="directory1.php">On-Campus</a></li>
                     <li><a href="directory2.php">Off-Campus</a></li>
                 </ul>
@@ -66,6 +78,7 @@
             <li><a href="quiz.html">Survey</a></li>
         </ul>
     </nav>
+    
 
     <div class="main-content">
         <h1 style="text-align: center;">About Us</h1>
@@ -77,12 +90,19 @@
                 At our core, we believe that every student deserves to feel at 
                 home while pursuing their education. Our mission is to facilitate 
                 this by connecting students with compatible roommates who share 
-                their values, lifestyle preferences, and academic goals. We aim 
+                their values, lifestyle preferences, and academic goals. 
+                </p>
+            </br>
+                <p>
+                We aim 
                 to foster an inclusive and supportive environment where students 
                 can thrive both personally and academically. By using advanced 
                 matching algorithms and personalized surveys, we ensure that each 
                 student finds a roommate who not only meets their needs but also 
                 enhances their college experience.
+
+
+
                 </p>
             </div>
 
@@ -93,19 +113,26 @@
             <div class="box">
                 <h2>How It Works</h2>
                 <p>
-                    Complete a brief survey, and our system will match you with a 
-                    compatible roommate based on your preferences.
-                    Our process is simple and intuitive. First, students complete a 
-                    brief survey that gathers information about their living 
-                    preferences, such as cleanliness and social activities. Our 
-                    intelligent matching system then analyzes this data to pair 
-                    students with potential roommates who have complementary lifestyles. 
-                    After receiving their matches, students can review profiles, 
-                    chat, and ultimately select the roommate that feels right for 
-                    them. We are committed to providing a seamless experience that 
-                    takes the stress out of roommate selection, allowing students to 
-                    focus on what truly matters: their education and personal growth.
+                    <strong> 1. Complete a Brief Survey: </strong> Share your living preferences, such as cleanliness, social habits, and lifestyle choices.
                 </p>
+            </br>
+                <p>
+                    <strong> 2. Let Our Service Work Its Magic: </strong> Our intelligent matching system analyzes your data to find compatible roommates with complementary lifestyles.
+                </p>
+            </br>
+                <p>
+                    <strong>3. Review Your Matches: </strong> Explore profiles of potential roommates tailored to your preferences.
+                </p>
+            </br>
+                <p>
+                    <strong>4. Connect With Your Matches:</strong>Chat with your matches to get to know them better before making a decision.
+                </p>
+            </br>
+                <p>
+                    <strong>5. Choose Your Ideal Roommate: </strong> Select a roommate that fits your preferences and lifestyle!
+
+        </p>
+    </br>
             </div>
 
             <div class="box image-box">
@@ -113,19 +140,16 @@
             </div>
 
             <div class="box">
-                <h2>Why It's Important</h2>
+                <h2>We Value Your College Experience</h2>
                 <p>
-                    Finding the right roommate can significantly impact a student's 
-                    college journey. A good roommate fosters a positive living 
-                    environment, providing emotional support and enhancing the overall 
-                    college experience. Research shows that students with compatible 
-                    roommates tend to achieve better academic results, experience 
-                    lower stress levels, and have higher levels of satisfaction 
-                    during their college years. Our platform is dedicated to helping 
-                    students find those meaningful connections that not only contribute 
-                    to academic success but also create lasting friendships and a sense 
-                    of belonging in their new home away from home.
+                    Finding the right roommate can greatly enhance a student's college experience. 
+                    A compatible roommate fosters a positive living environment, reduces stress, boosts academic success, and promotes overall satisfaction. 
                 </p>
+            </br>
+                <p>
+                Our platform helps students form meaningful connections that lead to lasting friendships and a strong sense of belonging in their home away from home.
+                </p>
+
             </div>
 
             <div class="box image-box">
@@ -134,6 +158,14 @@
 
         </div>
     </div>
+</br>
+</br>
+</br>
+    <div class="mainCTA">
+        <a href="quiz.html" style="text-decoration: none;"><button class="cta-button">Take the Survey</button></a>
+    </div>
+
+</br>
     <footer>
         <div class="left-footer">
             <img src="Logo.png" alt="Logo">
@@ -146,5 +178,18 @@
             <a href="quiz.html">Quiz</a>
         </div>
     </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+    
 </body>
 </html>

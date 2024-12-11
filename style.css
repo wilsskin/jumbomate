@@ -90,6 +90,276 @@ nav {
     border-radius: 5px;
 }
 
+
+
+/* Banner Section */
+.banner {
+    display: flex;
+    height: 400px;
+    margin-top: 75px;
+}
+
+.banner-content {
+    width: 50%; /* Left side occupies half the width */
+    padding: 50px;
+    padding-top: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.banner-image {
+    width: 50%; /* Right side occupies half the width */
+    background-image: url('HeroBanner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-content h4 {
+    font-size: 26px;
+    color: #3172AE;
+    margin-bottom: 8px;
+}
+
+.banner-content h1 {
+    font-size: 42px;
+    color: #000;
+    margin: 20px 0;
+    font-family: "DM Sans", sans-serif;
+}
+
+.banner-content .cta-button {
+    padding: 12px 25px;
+    background-color: #3172AE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.banner-content .cta-button:hover {
+    background-color: #F08080;
+}
+
+/* Second Content Section */
+.second-content {
+    padding: 50px 50px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.second-content h2 {
+    font-size: 26px;
+    color: #3172AE;
+    margin-bottom: 20px;
+}
+
+.second-content h4 {
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+
+footer {
+    background-color: #F0F5FB;
+    padding: 30px 50px; /* Reduced padding for a slimmer footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: top; /* Vertically align the content */
+    gap: 20px;
+}
+
+footer .left-footer img {
+    width: 50px; /* Slightly smaller logo if needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin-bottom: 40px; /* Reduce spacing below the logo */
+    align-items: top; /* Vertically align the content */
+
+}
+
+footer .right-footer {
+    display: flex;
+    align-items: top; /* Vertically align the content */
+    gap: 25px;
+    margin-top: 12px;
+
+
+}
+
+
+/* Button Container with Shadow */
+.cta-box {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 30px; /* Keep the box size consistent */
+    border-radius: 8px; /* Rounded corners for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    text-align: center; /* Center-align the text inside */
+    margin-top: 50px; /* Add spacing between the box and other elements */
+    max-width: 230px;
+    max-height: 80px;
+}
+
+/* Button Styling */
+.cta-button {
+    padding: 20px 40px; /* Increased padding for a larger button */
+    background-color: #3172AE; /* Original blue background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Show pointer on hover */
+    font-size: 18px; /* Increase font size for emphasis */
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #F08080; /* Orange background on hover */
+}
+
+.housing-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders don't double up */
+    table-layout: fixed;
+}
+
+.housing-table th,
+.housing-table td {
+    text-align: left; /* Centers content within each column */
+    padding-top: 20px; /* Adds space inside cells */
+    max-width: 300px;
+    vertical-align: top; /* Align content to the top of the cell */
+}
+
+.housing-table th {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+}
+
+th::after {
+    content: "";
+    display: block;
+    width: 50%; /* Adjust width as desired */
+    height: 2px; /* Adjust thickness */
+    background-color: #F08080; /* Coral color for the line */
+    margin-top: 12px;
+}
+
+.housing-table td {
+    font-size: 18px;
+    max-width: 400px; /* Restricts content width */
+    word-wrap: break-word; /* Wraps long words to the next line */
+    margin: 0 auto; /* Centers the content inside the cell */
+    text-align: left; /* Ensures text stays centered */
+}
+
+.housing-table td:first-child {
+    padding-right: 60px; /* Add padding to the right side of the left column */
+}
+
+.housing-table td:last-child {
+    padding-right: 42px; /* Add padding to the left side of the right column */
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 50px 0;
+    text-align: left;
+}
+
+.how-it-works h2 {
+    color: #3172AE;
+    font-size: 26px;
+    margin-bottom: 20px;
+    max-width: 1000px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+}
+
+.step img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    align-items: left;
+    
+}
+
+.step-caption {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 200;
+    margin-bottom: 100px;
+
+}
+
+.main-content h2 {
+    font-size: 26px;
+    color: #3172AE;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.main-content h2::after {
+    content: "";
+    display: block;
+    width: 350px; /* Adjust width as desired */
+    height: 2px; /* Adjust thickness */
+    background-color: #F08080; /* Coral color for the line */
+    margin-top: 12px;
+}
+
+
+
+.main-content h4 {
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+
+.second-content h4::after {
+    content: "";
+    display: block;
+    width: 350px; /* Adjust width as desired */
+    height: 2px; /* Adjust thickness */
+    background-color: #F08080; /* Coral color for the line */
+    margin-top: 12px;
+}
+
+
+.main-content {
+    padding-bottom: 10px;
+    padding-top: 150px;
+}
+
+.mainCTA {
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
 /* Mobile Styles: Below 750px */
 @media (max-width: 750px) {
     .nav-links {
@@ -126,181 +396,25 @@ nav {
     .dropdown-menu li a {
         padding: 8px;
     }
-}
 
-/* Banner Section */
-.banner {
-    display: flex;
-    height: 400px;
-    margin-top: 75px;
-}
+    .banner-content h4 {
+        font-size: 22px;
+        color: #3172AE;
+        margin-bottom: 8px;
+    }
+    
+    .banner-content h1 {
+        font-size: 32px;
+        color: #000;
+        margin: 20px 0;
+        font-family: "DM Sans", sans-serif;
+    }
 
-.banner-content {
-    width: 50%; /* Left side occupies half the width */
-    padding: 50px;
-    background-color: rgba(255, 255, 255, 0.8);
-}
+    .banner-content .cta-button {
+        display: none;
+    }
 
-.banner-image {
-    width: 50%; /* Right side occupies half the width */
-    background-image: url('HeroBanner.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.banner-content h4 {
-    font-size: 26px;
-    color: #3172AE;
-    margin-bottom: 8px;
-}
-
-.banner-content h1 {
-    font-size: 42px;
-    color: #000;
-    margin: 10px 0;
-    font-family: "DM Sans", sans-serif;
-}
-
-.banner-content .cta-button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background-color: #3172AE;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.banner-content .cta-button:hover {
-    background-color: #F08080;
-}
-
-/* Second Content Section */
-.second-content {
-    padding: 50px 20px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.second-content h2 {
-    font-size: 28px;
-    color: #3172AE;
-    margin-bottom: 20px;
-}
-
-footer {
-    background-color: #F0F5FB;
-    padding: 10px 30px; /* Reduced padding for a slimmer footer */
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Vertically align the content */
-}
-
-footer .left-footer img {
-    width: 50px; /* Slightly smaller logo if needed */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-    margin-bottom: 5px; /* Reduce spacing below the logo */
-}
-
-/* Button Container with Shadow */
-.cta-box {
-    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
-    padding: 30px; /* Keep the box size consistent */
-    border-radius: 8px; /* Rounded corners for the box */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    text-align: center; /* Center-align the text inside */
-    margin-top: 20px; /* Add spacing between the box and other elements */
-}
-
-/* Button Styling */
-.cta-button {
-    padding: 20px 40px; /* Increased padding for a larger button */
-    background-color: #3172AE; /* Original blue background */
-    color: white; /* White text color */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners for the button */
-    cursor: pointer; /* Show pointer on hover */
-    font-size: 18px; /* Increase font size for emphasis */
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #F08080; /* Orange background on hover */
-}
-
-.housing-table {
-    width: 100%;
-    border-collapse: collapse; /* Ensures borders don't double up */
-}
-
-.housing-table th,
-.housing-table td {
-    text-align: left; /* Align text to the left */
-    padding: 15px 20px; /* Add padding for spacing inside cells */
-    vertical-align: top; /* Align content to the top of the cell */
-}
-
-.housing-table th {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.housing-table td {
-    font-size: 18px;
-}
-
-/* How It Works Section */
-.how-it-works {
-    padding: 50px 0;
-    text-align: left;
-}
-
-.how-it-works h2 {
-    color: #3172AE;
-    font-size: 28px;
-    margin-bottom: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.steps {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.step {
-    flex: 1;
-    text-align: center;
-}
-
-.step img {
-    width: 100%;
-    max-width: 120px;
-    height: auto;
-    margin-bottom: 10px;
-    margin-top: 30px;
-    align-items: center;
-}
-
-.step-caption {
-    font-size: 16px;
-    color: #333;
-}
-
-.main-content h2 {
-    font-size: 28px;
-    color: #3172AE;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.main-content {
-    padding-bottom: 10px;
+    .banner-content .cta-box {
+        display: none;
+    }
 }

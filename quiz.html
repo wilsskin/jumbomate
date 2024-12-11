@@ -108,30 +108,37 @@
         </style>
     </head>
     <body>
-        <nav>
-                <div class="logo">
-                    <a href="index.html"><img src="Logo.png" alt="Logo"></a>
-                </div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li>
-                        <a href="#" class="dropdown">About</a>
-                        <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="testimony.html">Testimonials</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown">Database</a>
-                        <ul>
-                            <li><a href="directory1.php">On-Campus</a></li>
-                            <li><a href="directory2.php">Off-Campus</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="quiz.html">Survey</a></li>
+        <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="NewLogo.png" alt="Logo"></a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#" class="dropdown">About</a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimony.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-        </nav>
+            </li>
+            <li>
+                <a href="#" class="dropdown">Database</a>
+                <ul class="dropdown-menu">
+                    <li><a href="directory1.php">On-Campus</a></li>
+                    <li><a href="directory2.php">Off-Campus</a></li>
+                </ul>
+            </li>
+            <li><a href="quiz.html">Survey</a></li>
+        </ul>
+    </nav>
+    
         <div class="main-content">
                 <h1>Take Our Housing Survey!</h1>
                 <div class="form-container">
@@ -397,5 +404,17 @@
                     <a href= "quiz.html">Quiz</a>
                 </div>
             </footer>
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const hamburger = document.querySelector(".hamburger");
+                    const navLinks = document.querySelector(".nav-links");
+        
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                    });
+                });
+            </script>
     </body>
 </html>
