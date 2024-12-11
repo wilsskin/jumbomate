@@ -75,6 +75,11 @@ nav {
     background-color: #E0E7F3;
 }
 
+nav ul li a.dropdown::after {
+    content: "▾";
+    margin-left: 5px;
+}
+
 /* Hamburger Menu */
 .hamburger {
     display: none; /* Hidden by default */
@@ -166,18 +171,20 @@ nav {
 
 footer {
     background-color: #F0F5FB;
-    padding: 30px 50px; /* Reduced padding for a slimmer footer */
+    padding: 15px 30px; /* Reduced padding for a slimmer footer */
     display: flex;
     justify-content: space-between;
     align-items: top; /* Vertically align the content */
-    gap: 20px;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto;
 }
 
 footer .left-footer img {
     width: 50px; /* Slightly smaller logo if needed */
     height: auto; /* Maintain aspect ratio */
     display: block;
-    margin-bottom: 40px; /* Reduce spacing below the logo */
+    margin-bottom: 20px; /* Reduce spacing below the logo */
     align-items: top; /* Vertically align the content */
 
 }
@@ -187,8 +194,6 @@ footer .right-footer {
     align-items: top; /* Vertically align the content */
     gap: 25px;
     margin-top: 12px;
-
-
 }
 
 
@@ -349,8 +354,12 @@ th::after {
 
 
 .main-content {
-    padding-bottom: 10px;
-    padding-top: 150px;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    flex: 1;
 }
 
 .mainCTA {
