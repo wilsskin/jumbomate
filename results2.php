@@ -193,7 +193,7 @@
     </nav>
     <div class="main-content">
         <h1>Thank You For Joining JumboMate</h1>
-        <h2>Here Are Your Matches</h2>
+        <h1>Here Are Your Matches</h1>
     <div class="result-container" id="results">
 
 
