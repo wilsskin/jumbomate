@@ -1,21 +1,18 @@
 # JumboMate
+Roommate matching platform for Tufts students built as a CS20 final project.
 
-JumboMate is a roommate matching website built as a final project for CS20: Web Programming at Tufts University. </br>
-It allows students to take a compatibility quiz and browse a directory of potential matches with profiles and images.
+[ellab1.sgedu.site/cs20final/index.html](https://ellab1.sgedu.site/cs20final/index.html)
 
-## Team Members
-- [Ella Barnett](https://github.com/ebarne04)
-- [Ariella Mann](https://github.com/ariellamann02)
-- [Wilson Skinner](https://github.com/wilsskin)
-- Valeska Peters
+**Team:** [Ella Barnett](https://github.com/ebarne04), [Ariella Mann](https://github.com/ariellamann02), [Wilson Skinner](https://github.com/wilsskin), Valeska Peters
 
-## Features
-- Personality and habit-based roommate quiz
-- Profile directory with images and compatibility info
-- Results page showing matches
-- Built using HTML, CSS, PHP, and MySQL
+---
 
-## Live Site
-Check out the live site here!
-https://ellab1.sgedu.site/cs20final/index.html
+## What It Does
+- Walks students through a personality and habit-based compatibility quiz
+- Matches users against a directory of student profiles
+- Displays results with profile photos and compatibility details
 
+## How It's Built
+PHP backend handles quiz submissions and runs the matching logic against a MySQL database of student profiles. HTML and CSS pages make up the multi-step quiz, directory, and results views, with no frontend framework.
+
+**Stack:** PHP, MySQL, HTML, CSS
